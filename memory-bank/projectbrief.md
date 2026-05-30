@@ -1,38 +1,25 @@
 # Project Brief
-*Last Updated: 2026-30-05 12:56:58 UTC*
+*Last Updated: 2026-05-30 13:10 UTC*
 
-## Project Overview
-**Project Name**: [Fill in project name]
-**Description**: [Brief description of what this project does]
+## Overview
+The Quarto blog for quantumofgravity.com — migrated from digitalocean-server to standalone repo.
 
-## Objectives
-1. [Primary objective]
-2. [Secondary objective]
-3. [Additional objectives]
-
-## Key Features
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+## Scope
+- 41 blog posts on physics, computation, and related topics
+- Static pages: Home, About, Research, Blog listing, Papers, Teaching, Collected Notes, Contact
+- Quarto-generated static site deployed to `/home/quantumofgravity/public_html/blog/`
 
 ## Tech Stack
-- **Language**: [Primary language]
-- **Framework**: [Framework if applicable]
-- **Database**: [Database choice]
-- **Other tools**: [Other relevant tools]
+- Quarto v1.8.27
+- Custom MathJax macros for physics notation
+- Bootstrap + custom SCSS styling
+- Bibliography: `bib_library.bib` + `bib_aliases.bib`
 
-## Constraints & Requirements
-- [Constraint/Requirement 1]
-- [Constraint/Requirement 2]
-- [Constraint/Requirement 3]
-
-## Success Metrics
-- [Metric 1]
-- [Metric 2]
-- [Metric 3]
+## Status
+- ✅ Migrated from digitalocean-server: 2026-05-30
+- ✅ GitHub repo: `space-cadet/blog` (public)
+- ✅ Memory-bank initialized (mb-core)
+- 🔄 Pending: Quarto installation on server, automated render/deploy pipeline
 
 ## Repository
-**URL**: [Link to repository if applicable]
-
-## Team/Contributors
-- [Name]: [Role]
+- **URL**: `github.com/space-cadet/blog`

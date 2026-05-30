@@ -1,33 +1,32 @@
 # Task Registry
-*Last Updated: 2026-30-05 12:56:58 UTC*
-
-## Active Tasks
-| ID | Title | Status | Priority | Started | Dependencies |
-|----|-------|--------|----------|---------|--------------|
+*Last Updated: 2026-05-30 13:10 UTC*
 
 ## Completed Tasks
-| ID | Title | Completed |
-|----|-------|-----------|
 
-## Task Template
-When creating new tasks, use this format:
+### T1: Migrate blog to standalone repo
+**Description**: Move Quarto blog source from digitalocean-server to independent repo
+**Status**: ✅ COMPLETE
+**Priority**: HIGH
+**Started**: 2026-05-30
+**Completed**: 2026-05-30
+**Files**: All blog-quarto content
+**Repository**: `space-cadet/blog`
 
-### TXX: Task Title
-**Description**: Brief description of what this task accomplishes
-**Status**: 🔄 In Progress
-**Priority**: HIGH/MEDIUM/LOW
-**Started**: YYYY-MM-DD
-**Dependencies**: Other task IDs if applicable
+## Active Tasks
 
-## Completion Criteria
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
+### T2: Install Quarto on server
+**Description**: Install Quarto CLI on DigitalOcean VPS for server-side rendering
+**Status**: 🔄 PENDING
+**Priority**: HIGH
+**Dependencies**: T1
 
-## Progress
-1. ⬜ Step 1
-2. ⬜ Step 2
-3. ⬜ Step 3
+### T3: Set up automated render/deploy
+**Description**: Create deploy script that pulls repo, runs `quarto render`, and syncs to public_html/blog/
+**Status**: ⬜ NOT STARTED
+**Priority**: HIGH
+**Dependencies**: T2
 
-## Notes
-Context and important decisions for this task
+## Historical Tasks (from digitalocean-server)
+- T9b: Quarto Blog Migration - 🔄 (local build working, now in standalone repo)
+- T9a: Static Blog Site Generation - ⏸️ (superseded by Quarto)
+- T9: WordPress Blog Management - ⏸️ (abandoned)
