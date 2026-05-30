@@ -1,0 +1,14 @@
+---
+title: "quantumofgravity"
+subtitle: "Physics, Computing, and the Nature of Reality"
+---
+
+Welcome to **quantumofgravity**. This site explores the interface of quantum gravity, condensed matter, and computational physics.
+
+### Featured Content
+
+*   [Blog](blog.qmd): Latest thoughts and research updates.
+*   [Research](research.qmd): Overview of current projects.
+*   [About](about.qmd): More about me and my work.
+
+

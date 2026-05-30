@@ -1,0 +1,42 @@
+---
+title: "This Week-ish in Theoretical Physics"
+date: "2019-06-05"
+categories: []
+slug: "this-week-ish-in-theoretical-physics"
+---
+Surely it is hubris on my part to presume to co-opt the title of the venerable online column "This Week's Finds in Mathematical Physics" [written](http://math.ucr.edu/home/baez/twf.html) for nearly seventeen years by the great doyen of mathematical communication - John Baez. However, not finding any other takers for this task I figured \... why not? So here is the first in a hopefully long line of posts on "*This Week-ish in Theoretical Physics*".
+
+# Observing Quantum Mechanical Collapse
+
+In [@Minev2019To-Catch], Minev and collaborators have accomplished something quite remarkable: observing - yes, that's right, observing - the collapse of a quantum mechanical wavefunction into an eigenstate and demonstrating that, contrary to the Copenhagen interpretation - wavefunction collapse is a gradual, continuous (at least on the resolution scales of the experiment), reversible process. It is hard to overstate the significance of this work. It clearly demonstrates that contrary to Bohr and in agreement with Einstein, quantum mechanical collapse is not a magical event which can never be described in physical terms. Instead, they show that wavefunction collapse is a physical *process*, like any other, and therefore, like any other process, it can be observed, monitored, controlled and even reversed. There is a substantial amount of literature on this model of wavefunction collapse which goes by the name of "quantum trajectories" (see e.g. [@Brun2002A-Simple] for an accessible introduction) and is also studied under the title of "quantum state diffusion" [@Gisin1997Quantum; @Ian-Percival1998Quantum] Now the million, nay - billion, dollar question is what is the *governing dynamics* of wavefunction collapse. Phenomenologically this process can be modeled using the framework of open quantum systems and the Lindblad equation [@Pearle2012Simple]. However, this description is only at the level of an "effective theory". Ultimately some deeper physical principles should determine the manner in which collapse happens. It is possible that the answer may lie in the quantum geometric picture of spacetime which arises from LQG (loop quantum gravity). In any case, this work is sure to set off a frenzy of work in models of stochastic collapse related to quantum gravity in some way or another.
+
+# Quantum Computation as Gravity
+
+That is the title of a recent, very elegant paper [@Caputa2019Quantum] by Pawel Caputa and Javier Magan. It didn't come out this week-ish, but I learnt of it this week-ish, therefore it qualifies! Let me quote the abstract:
+
+> We formulate Nielsen's geometric approach to complexity in the context of two-dimensional conformal field theories, where series of conformal transformations are interpreted as "unitary circuits". We show that the complexity functional can be written as the Polyakov action of two-dimensional gravity or, equivalently, as the geometric action on the coadjoint orbits of the Virasoro group. This way, we argue that gravity sets the rules for optimal quantum computation in conformal field theories.
+
+This work is about one of the hottest quantum gravity related lines of research which involves notions of complexity, quantum computation and, of-course, gravity.
+
+## Background: Optimal Quantum Circuits
+
+It all goes back to a paper [@Nielsen2005A-Geometric] by Michael Nielsen - of "Nielsen and Chuang" [@Nielsen2000Quantum] fame - from 2005. In this work Nielsen addressed the question of quantifying the minimum complexity - measured in terms of the number of primitive gates - a quantum computational circuit must have in order to implement a generic unitary operation on an $n$qubit state. Assuming the qubits in question are spin 1/2 systems, the space of unitary operations on a single qubit is given by the group$SU(2)$and therefore the space of unitary operations on$n$such qubits lives in the manifold$\mc{M} = SU(2^n)$^[1](#fn-1067-nqubit-space)^. The question of finding the optimal way to generate an arbitrary element of$\mc{U} \in \mc{M}$becomes equivalent to finding the shortest path from the identity element$\mbb{1}_n$(the "origin" of the manifold) to the point$\mc{U}$. To determine distances between different points of $\mc{M}$one needs a metric on this manifold. Nielsen showed that one can define a suitable Finsler metric ^[2](#fn-1067-Finsler)^ which satisfies the desired properties (continuity, positivity, triangle inequality, etc.) on$\mc{M}$, such that a geodesic connecting any two points $\mc{U}, \mc{U'}$of$\mc{M}$can be viewed as the shortest possible "path" one can follow to generate the unitary$\mc{U'}$starting from the unitary$\mc{U}$. That this is a remarkable result needs hardly be emphasized.
+
+## Complexity = Action
+
+For one, it immediately suggests a direct link between the geometry encoded in spin-networks to quantum computation and quantum control theory (more on this in an upcoming post). Secondly, it suggests that it should be possible to write down an action principle whose extremization yields an equation of motion whose trajectory yields the optimal path for generating any unitary operator starting from any other unitary operator. Third, these ideas have recently been exploited in work by Susskind and collaborators in order to formulate the so-called "Complexity = Action" conjecture [@Brown2016Holographic; @Brown2016bComplexity; @Brown2017Quantum; @Brown2017The-Second; @Susskind2018PiTP; @Susskind2018Three; @Susskind2018Why-Do-Things] according to which the complexity of the holographic dual of a bulk geometry is equal to the action defined over a region of the bulk known as the Wheeler-deWitt patch. The connection between the second and third points is quite clear.
+
+## CFT Complexity = 2D Gravity
+
+This brief discussion brings us to the Caputa-Magan paper [@Caputa2019Quantum]. What the duo have shown can be summarized as follows:
+
+1.  Conformal transformations in 2D CFTs can be viewed as being composed of a series of gates which belong to the Virasoro group.
+2.  The corresponding action for the Nielsen complexity of a conformal transformation can be expressed entirely in terms of the central charge $c$ of the CFT.
+3.  For large $c$, the Nielsen complexity becomes identical to the Polyakov action for two-dimensional gravity.
+
+This represents a concrete realization of the hope expressed in the last section that there should exist an action whose extremization yields the Nielsen complexity. This paper is a very concrete link for the correspondence, as advocated by Susskind: $GR = QM$. That's it for this first episode of "This Week-ish in Theoretical Physics". Ciao!
+
+------------------------------------------------------------------------
+
+1.  [If the Hilbert space of a single system is $d$dimensional, then the Hilbert space of$n$such systems is$d^n$dimensional. Thus, a vector in the$n$spin 1/2 qubit state space will be of length$2^n$and operators acting on these states will be represented by$2^n \times 2^n$dimensional matrices. A unitary operator acting on such$n$qubit states would therefore be an element of$SU(2^n)$. ]{#fn-1067-nqubit-space}
+2.  [A Finsler geometry is a generalization of Riemannian geometry where the restriction that the metric should be a quadratic form, on the tangent space of the manifold, is dropped. ]{#fn-1067-Finsler}

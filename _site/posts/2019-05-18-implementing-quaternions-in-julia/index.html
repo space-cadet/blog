@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2019-05-18">
+
+<title>Implementing Quaternions in Julia – quantumofgravity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f384962f7b91d97641763c29bba4a4a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      bite: ["\\begin{itemize}", 0],
+      eat: ["\\end{itemize}", 0],
+      beq: ["\\begin{equation}", 0],
+      eeq: ["\\end{equation}", 0],
+      rarrow: "\\rightarrow",
+      beqa: ["\\begin{align}", 0],
+      eeqa: ["\\end{align}", 0],
+      barr: ["\\begin{array}", 0],
+      earr: ["\\end{array}", 0],
+      del: "\\partial",
+      de: "\\mathrm{d}",
+      th: "\\mathrm{th}",
+      ie: "\\textit{i.e.}~",
+      eg: "\\textit{e.g.}~",
+      wrt: "\\textit{w.r.t.}~",
+      etc: "\\textit{etc.}~",
+      C: "\\mathbb{C}",
+      R: "\\mathbb{R}",
+      M: "\\mathcal{M}",
+      N: "\\mathcal{N}",
+      bz: "\\mathbf{z}",
+      mb: ["\\mathbf{#1}", 1],
+      mc: ["\\mathcal{#1}", 1],
+      mbb: ["\\mathbb{#1}", 1],
+      mf: ["\\mathfrak{#1}", 1],
+      unit: ["\\mathbf{\\hat{#1}}", 1],
+      id: "\\mathbb{1}",
+      vect: ["\\boldsymbol{#1}", 1],
+      bvec: ["\\boldsymbol{\\vec #1}", 1],
+      expect: ["\\langle #1\\rangle", 1],
+      innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+      expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+      bra: ["\\langle #1 \\vert", 1],
+      ket: ["\\vert #1 \\rangle", 1],
+      supersc: ["^{\\textrm{#1}}", 1],
+      subsc: ["_{\\textrm{#1}}", 1],
+      sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+      norm: ["\\lVert #1 \\rVert", 1],
+      rket: ["\\vert #1 ]", 1],
+      rbra: ["[ #1 \\vert", 1],
+      rinnerp: ["[ #1 \\vert #2 ]", 2],
+      bket: ["\\vert #1 )", 1],
+      bbra: ["( #1 \\vert", 1],
+      binnerp: ["( #1 \\vert #2 )", 2],
+      innerpA: ["\\langle #1 \\vert #2 ]", 2],
+      innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+      onehalf: "\\frac{1}{2}",
+      Tr: "\\mathrm{Tr}",
+      Cyl: "\\mathrm{Cyl}",
+      Riem: "\\mathrm{Riem}"
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantumofgravity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/space-cadet"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/vaidphysics"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Implementing Quaternions in Julia</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 18, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../wp-content/uploads/2019/05/IMG_20190513_171206_HDR-e1557944595462-300x111.jpg" class="img-fluid figure-img"></p>
+<figcaption>Newton chilling and Einstein contemplating in IUCAA courtyard.</figcaption>
+</figure>
+</div>
+<p><a href="https://julialang.org/">Julia</a> is making waves in the scientific programming community as <em>the</em> language to learn if you truly want to be a computational code ninja. I won’t list out all the features which make Julia such an incredilicious language to learn. You can’t go clicks on the internet without stumbling into a paean to Julia, so one more such list would be highly redundant. I will however use one example to illustrate what makes Julia that much more expressive, convenient and, indeed, fast compared to almost any language out there for scientific computing. Mind you, I am very much a Julia novice so I’m likely to get the technical jargon wrong in parts. I pray to the Julia-Gods for forgiveness for such infractions. We all know what complex numbers are (right?) and many people have also heard of their cousins - the quaternions. Here’s a quick reminder to jog your memory. Those who are upto speed on their complex number and quaternions can jump ahead to the juicy parts in the section on implementing quaternions in either <a href="#in-python">Python</a> or in <a href="#in-julia">Julia</a> <sup><a href="#fn-1024-MarkdownLinks">1</a></sup></p>
+<section id="complex-numbers" class="level1">
+<h1>Complex Numbers</h1>
+<p>Complex numbers are “tuples” (a fancy word for a set consisting of two objects) of real numbers, i.e.&nbsp;given <span class="math inline">\(a, b \in \mathbb{R}\)</span>, one can define a complex number: <span class="math inline">\(z = a + \imath b,\)</span>which is an element of the so-called “complex plane”<span class="math inline">\(\mathbb{C}\)</span>which is nothing more than the two-dimensional Euclidean plane<span class="math inline">\(\mathbb{R}^2\)</span>with one axis identified as “real” and the other as “imaginary”. The funny looking “i” multiplying<span class="math inline">\(b\)</span>in the expression above, is called the “unit imaginary” and is supposed to represent the square of root of<span class="math inline">\(-1\)</span>: <span class="math inline">\(\imath = \sqrt{-1}.\)</span>At this point, you’re probably thinking “what a load of ..., you can’t take square roots of negative numbers!” And, you would be right! Indeed we can’t express the square root of a negative number in terms of real numbers. But, mathematicians being the wizards they are, decided there is no law which stops us from writing down the <em>formal</em> expression<span class="math inline">\(\imath = \sqrt{-1}\)</span>. If you can suspend disbelief for a second, and just accept this fact, then all sorts of wonderful things become possible. Given any two complex numbers we can add, subtract or multiply them to obtain <em>another</em> complex number:</p>
+<p><span class="math display">\[\n z_1 + z_2 &amp; = (a_1 + a_2) + \imath (b_1 + b_2) \nonumber \n z_1 - z_2 &amp; = (a_1 - a_2) + \imath (b_1 - b_2) \nonumber \n z_1 z_2 &amp; = (a_1 a_2 - b_1 b_2) + \imath (a_1 b_2 + a_2 b_2), \\$where in the last line we have used the fact that$(\imath b_1) (\imath b_2) = \imath^2 b_1 b_2 = - b_1 b_2$. We can also divide complex numbers by other complex numbers. However, in order to write the result of a division operation$z_1/z_2$as another complex number, we have to introduce a new operation called "complex conjugation" denoted by an asterix${}^\*$. Under complex conjugation, real numbers are unchanged, but purely imaginary numbers becomes negative:$a^\* = a; \quad (\imath b) = - \imath b; \Rightarrow z^\* = (a + \imath b)^\* = a - \imath b$where$a, b \in \mbb{R}$. The result of dividing one complex number by another can then be expressed as follows:$\n \frac{z_1}{z_2} &amp; = \frac{a_1 + \imath b_1}{a_2 + \imath b_2} \nonumber \n &amp; = \frac{(a_1 + \imath b_1)}{(a_2 + \imath b_2)} \frac{(a_2 - \imath b_2)}{(a_2 - \imath b_2)} \nonumber \nonumber \n &amp; = \frac{a_1 a_2 + b_1 b_2 + \imath (b_1 a_2 - b_2 a_1)}{a_2^2 + b_2^2} \nonumber \n &amp; = \frac{1}{\|z_2\|^2} z_1 z_2^\*. \\$In the second line we have multiplied the numerator and denominator by$z_2^\*$. In the third line we have used the fact that the multiple of a complex number with its complex conjugate yields a real number ($z z^\* = a^2 + b^2 \in \mbb{R}$) to get rid of the imaginary unit in the denominator. The real and imaginary parts of$z_1/z_2$can then be written as:$\mf{Re}(z_1/z_2) = \frac{a_1 a_2 + b_1 b_2}{a_2^2 + b_2^2}; \quad \mf{Im}(z_1/z_2) = \frac{b_1 a_2 - b_2 a_1}{a_2^2 + b_2^2}.$In this way we can perform all the standard arithmetical operations with complex numbers. We can go on to define functions on the complex plane$f: \mbb{C} \rightarrow \mbb{C}$. All the usual functions on real numbers, such as polynomials$x^n$, roots$x^{1/n}$, trignometric and logarithmic functions$\sin(x), \log(x)$, can be generalized straightforwardly to take complex numbers as their arguments instead of real numbers.
+This only touches the tip of the proverbial iceberg. There is a lot more to say about complex numbers, but this introduction will suffice to enable us to talk about our true goal - the quaternions.
+&lt;figure&gt;&lt;img src="/wp-content/uploads/2019/05/IMG_20190513_171153_HDR-e1557944746169-300x83.jpg" alt="Aryabhatta and Kepler showing off their moves in IUCAA courtyard." /&gt;&lt;figcaption&gt;Aryabhatta and Kepler showing off their moves in IUCAA courtyard.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h1&gt;Quaternions&lt;/h1&gt;
+Quaternions are just like complex numbers, with one minor difference. Instead of just &lt;em&gt;one&lt;/em&gt; imaginary axis as in the complex numbers, quaternions have &lt;em&gt;three&lt;/em&gt; different imaginary axes. Blew your mind, right? Well, not really. We don't have any difficulties in extending the real line to the two or three-dimensional spaces$\mbb{R}^2$and$\mbb{R}^n$. We are comfortable defining vectors in$\mbb{R}^n$as tuples of$n$real numbers:$\vect{v} = (v_1, v_2, \ldots, v_n)$and performing all the usual arithmetical operations (except for division) with these objects. As we have just seen, we can define a new kind of axis which represents the "imaginary" dimension. Well, what's to stop us from extending$\mbb{C}$by adding &lt;em&gt;more&lt;/em&gt; imaginary dimensions? Nothing!
+Let's start small and add just one extra imaginary axis. Our "triplex" numbers would then have the form:$\gamma = a + i b + j c,$where, expectedly,$i^2 = j^2 = -1$&lt;sup id="fnref-1024-kmath"&gt;&lt;a href="#fn-1024-kmath" class="jetpack-footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and$a,b,c \in \mbb{R}$. It turns out that the set of triplex numbers is not closed under the arithmetic operation of multiplication. We soldier on ahead and add one more dimension:$q = a + i b + j c + k d,$where, once again:$\label{eqn:quaternions-rule1}\ni^2 = j^2 = k^2 = -1, \\$However, now there is a new rule in town. When multiplying any two imaginary components with each other one gets the third kind of imaginary. This can be expressed as:$\label{eqn:quaternions-rule2}\ni \cdot j = k; \quad j \cdot k = i; \quad k \cdot i = j \\$What about$j \cdot i$? We can use the expression$j \cdot k = 1$from \eqref{eqn:quaternions-rule2} above, to write:$j \cdot i = j \cdot j \cdot k = -k$We can summarize the rules for quaternion imaginaries:
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;Operation&lt;/th&gt;
+  &lt;th&gt;Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+  &lt;td&gt;Complex Conjugation&lt;/td&gt;
+  &lt;td&gt;$i^\* = -i; \\\\; j^\* = -j; \\\\; k^\* = -k$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Square&lt;/td&gt;
+  &lt;td&gt;$i^2 = j^2 = k^2 = -1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Complex Multiplication&lt;/td&gt;
+  &lt;td&gt;$i \cdot j = k; \\\\; j \cdot k = i; \\\\; k \cdot i = j$with$j \cdot i = -k$, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+One can now use these rules, in addition to the usual rules for addition and subtraction, to perform all arithmetical operations with quaternions. Let me illustrate with the example of multiplying two quaternions$p_1$and$p_2$to get a third quaternion$p_3$. If we use the notation$p_n = a_n + i b_n + j c_n + k d_n$to represent the$n{}^\text{th}$quaternion in terms of its components, then for the components of$p_3$in terms of the components of$p_1$and$p_2$we obtain the following expression:$\n a_3 &amp; = a_1 a_2 - b_1 b_2 - c_1 c_2 - d_1 d_2 \nonumber \n b_3 &amp; = a_1 b_2 + a_2 b_1 + c_1 d_2 - c_2 d_1 \nonumber \n c_3 &amp; = a_1 c_2 + a_2 c_1 + d_1 b_2 - d_2 b_1 \nonumber \n d_3 &amp; = a_1 d_2 + a_2 d_1 + b_1 c_2 - b_2 c_1 \\$This introduction is sufficient to allow us to move on to discuss implementation of quaternions in the two commonly used scripting languages - Python and Julia.
+&lt;h1 id="in-python"&gt;In Python&lt;/h1&gt;
+There are two ways to implement custom types in Python. One can either follow the procedure for constructing custom types which can be manipulated in the same way as core Python types such as strings and lists.
+&lt;h2 id="custom-types"&gt;Custom Types in Python&lt;/h2&gt;
+The following code provides the basic template for defining custom types in Python 2.7. To begin with one has to write the skeleton C code base, implement all the relevant methods and finally compile everything using Cython or some other C/Python compiler.
+&lt;p&gt;&lt;a href="https://gist.github.com/space-cadet/4e106f3de8e742573f0f87788591e423"&gt;https://gist.github.com/space-cadet/4e106f3de8e742573f0f87788591e423&lt;/a&gt;&lt;/p&gt;
+The procedure is not too different in Python 3.7.
+&lt;p&gt;&lt;a href="https://gist.github.com/space-cadet/1106bac4e90df09733c11541e6bd87c3"&gt;https://gist.github.com/space-cadet/1106bac4e90df09733c11541e6bd87c3&lt;/a&gt;&lt;/p&gt;
+This is the hard way to implement a custom type in Python, but also the only way if one wants the custom type to act and behave like any other of Python's core types. A non-trivial amount of C code, C-Python interoperability and Python code is needed for this purpose.
+&lt;h2&gt;Examples: &lt;code&gt;numpy_quaternion.c&lt;/code&gt;&lt;/h2&gt;
+Let us look at another example which aims to extend the core capabilities of the &lt;code&gt;numpy&lt;/code&gt; module to include quaternion arithmetic. The file shown is &lt;code&gt;numpy_quaternion.c&lt;/code&gt;, containing the C code implementing code for construction quaternion objects in Python. A mere 1,628 lines long. And this does not include the C header files and various other supporting C and Python codes.
+&lt;p&gt;&lt;a href="https://gist.github.com/space-cadet/bd593380cd1c5529191026d5a51f0f2b"&gt;https://gist.github.com/space-cadet/bd593380cd1c5529191026d5a51f0f2b&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Examples: &lt;code&gt;quaternion.py&lt;/code&gt;&lt;/h2&gt;
+A second, somewhat simpler implementation in Python without worrying about optimizing computations using C code, defines quaternions as a an ordinary class - rather than a core Python type - with the quaternion data stored in a numpy array. Not counting the additional utility functions for interpolating between rotations and such it comes out to about 525 lines of code. While the code itself is fairly straightforward, easy to read and requires no knowledge of C or CPython, it will suffer from the performance penalties imposed due to Python's relaxed type inference scheme.
+&lt;p&gt;&lt;a href="https://gist.github.com/space-cadet/1e843909d111698bc8ab4b448939cdb8"&gt;https://gist.github.com/space-cadet/1e843909d111698bc8ab4b448939cdb8&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="in-julia"&gt;In Julia&lt;/h1&gt;
+Let us look at the same functionality implemented in Julia. Only 296 lines long. No need for separate C code in order to get C-like speeds. Syntax is simpler than the equivalent Python implementation. Operator overloading methods can be written in a very simple manner. For instance the operator &lt;code&gt;+&lt;/code&gt; for adding two quaternion types has a single line definition:
+&lt;pre&gt;&lt;code class="language-julia"&gt;(+)(q::Quaternion, w::Quaternion) = Quaternion(q.s + w.s, q.v1 + w.v1, q.v2 + w.v2, q.v3 + w.v3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/space-cadet/e042973f188213edc855893317d8af95"&gt;https://gist.github.com/space-cadet/e042973f188213edc855893317d8af95&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Julia vs Python&lt;/h1&gt;
+I ran some sample code to see what the differences between the Julia and Python implementations would arise. In particular I defined a simple method which takes a quaternion, a positive integer$n$and a mathematical function (such as$\exp, \sin, \log$, etc) as inputs and recursively calls the function on the given quaternion$n
+\]</span></p>
+<p>times. Here is the definition of the method in Python</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recursive_func(q, ntimes, func):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ntimes):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        q <span class="op">=</span> func(q)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(q)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and in Julia:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">recursive_func</span>(q<span class="op">::</span><span class="dt">Quaternion</span>, n<span class="op">::</span><span class="dt">Int</span>, func)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        q <span class="op">=</span> <span class="fu">func</span>(q)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(q,<span class="st">"\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="math-overflow-errors" class="level2">
+<h2 class="anchored" data-anchor-id="math-overflow-errors">Math Overflow Errors</h2>
+<p>One very interesting aspect is that whereas in Python when the result of a computation exceeds the numeric bounds of the system, the program throws an exception and crashes:</p>
+<p><a href="https://gist.github.com/space-cadet/1d86ce7d55740b695bded2a928d3bcff" class="uri">https://gist.github.com/space-cadet/1d86ce7d55740b695bded2a928d3bcff</a></p>
+<p>whereas in Julia it just continues as if nothing wrong had happened:</p>
+<p><a href="https://gist.github.com/space-cadet/78d67b84fdcc5f9c102d7a4c9977a440" class="uri">https://gist.github.com/space-cadet/78d67b84fdcc5f9c102d7a4c9977a440</a></p>
+<p>Now, of course, this isn’t exactly a good thing. In general when your computation gives you values which are out of bounds you <em>want</em> it to <em>not</em> continue as usual. Though, arguably, the Julia behavior is better in some situations when you don’t care much about out-of-bounds errors but are more concerned about not having the program crash halfway through.</p>
+</section>
+<section id="floating-point-precision" class="level2">
+<h2 class="anchored" data-anchor-id="floating-point-precision">Floating Point Precision</h2>
+<p>Recursively applying the <span class="math inline">\(\log\)</span> function to a random quaternion in Python yields the following output:</p>
+<p><a href="https://gist.github.com/space-cadet/d228836afca54c507ad8a4ec35d146e7" class="uri">https://gist.github.com/space-cadet/d228836afca54c507ad8a4ec35d146e7</a></p>
+<p>Note the limited floating point precision of the output and also that sometime into the calculation the output seems to stabilize around a fixed point. Let’s look at the same function applied to the same quaternion input value in Julia:</p>
+<p><a href="https://gist.github.com/space-cadet/e24f7f2b4fe9b910edc5d1431c5e57f6" class="uri">https://gist.github.com/space-cadet/e24f7f2b4fe9b910edc5d1431c5e57f6</a></p>
+<p>By default, Julia uses <code>Float64</code> types for floating point calculations, though that can be adjusted according to need. It is clear that Julia is working at a much higher floating point precision than the equivalent Python code. Even though the output appears to stabilize in Julia too, one can see that it doesn’t <em>exactly</em> reach a fixed point because of the floating point accuracy in Julia.</p>
+</section>
+<section id="runtimes" class="level2">
+<h2 class="anchored" data-anchor-id="runtimes">Runtimes</h2>
+<p>The computations above in Python and Julia took ~ 30 ms and 141 ms respectively. It would appear that the Python code is three times faster than the Julia code. Then again, this could be just because of the reduced precision arithmetic in the Python computation.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Julia does indeed have deep structural advantages over Python as a fast scriptable language for numerical computation. The ability to easily define custom types, nearly arbitrary precision code built into the core and speed (allegedly) are some of the features which distinguish Julia from Python. That being said, with the results shown above it is hard to unambiguously agree with the premise laid out in the introduction that Julia is inarguably better and faster than Python and other languages for numerical computation. In a follow-up post on “Dual Numbers and Automatic Differentiation in Julia” I will cover an application of Julia which, to the best of my knowledge, has no parallel in Python and which, I hope, will conclusively demonstrate Julia’s technical superiority over Python. Of course, Python is not going anywhere anytime soon. From statistical physics we know that states which cost the lowest in energy have the greatest chance of being occupied. So it is in life and coding. It requires a far lower expenditure of time and energy to learn Python than it does for Julia. As long as this aspect does not change, regardless of its overwhelming technical advantages, Julia will remain a niche language used mostly for numerical computing and data analysis while Python continues to be used for the vast majority of non-numerical coding applications.</p>
+<hr>
+<ol type="1">
+<li><span id="fn-1024-MarkdownLinks">Note to self. In Markdown, one can easily add links to other sections of the document. For example the section <a href="#in-julia">Julia</a> can be linked to using the code: <code>[Julia](#in-julia)</code>. In addition you need to add a header id as explained in the online <a href="https://michelf.ca/projects/php-markdown/extra/">Markdown extra</a> reference. For instance, here the code for doing so is: <code># In Julia {#in-julia}</code>. The part in curly braces is the header id which is used for hot-linking.&nbsp;</span></li>
+<li><span id="fn-1024-kmath">Sadly, for the quaternions we will no longer be able to use the symbol <span class="math inline">\(\imath\)</span>for the unit imaginary and have to go back to the lowly<span class="math inline">\(i\)</span>. The reason being, that while <span class="math inline">\(\LaTeX\)</span> provides for <code>\imath</code> (<span class="math inline">\(\imath\)</span>) and <code>\jmath</code> (<span class="math inline">\(\jmath\)</span>) commands, there is no <code>\kmath</code> command. So, if we don’t want one of our imaginary letters to look out of whack with the other two we have to drop the fancy lettering.&nbsp;</span></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantumofgravity\.com\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

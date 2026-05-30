@@ -1,0 +1,6 @@
+---
+title: "Home"
+date: "2017-08-08"
+slug: "home"
+---
+[Blog](https://physicistatwork.com/wpblog/blog/) [Photo Gallery](/piwigo "Gallery3"){target="_blank" rel="noopener"} [Dokuwiki](/dokuwiki "Dokuwiki"){target="_blank" rel="noopener"} [Librarian](/librarian "Citation Library"){target="_blank" rel="noopener"} [Docs](/docs "Collected Documentation"){target="_blank" rel="noopener"} Moodle [Owncloud](/owncloud "Personal Cloud"){target="_blank" rel="noopener"} I am a physicist presently employed as an assistant professor at the [National Institute of Technology, Karnataka](http://nitk.ac.in) located in Mangaluru, India. My interests are at the interface of quantum gravity and condensed matter physics. A list of my research papers can be found on [SPIRES](http://inspirehep.net/search?p=exactauthor%3AD.Vaid.1).

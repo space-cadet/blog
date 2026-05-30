@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-02-03">
+
+<title>Battling Depression: A Personal Account (Part 1) – quantumofgravity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f384962f7b91d97641763c29bba4a4a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      bite: ["\\begin{itemize}", 0],
+      eat: ["\\end{itemize}", 0],
+      beq: ["\\begin{equation}", 0],
+      eeq: ["\\end{equation}", 0],
+      rarrow: "\\rightarrow",
+      beqa: ["\\begin{align}", 0],
+      eeqa: ["\\end{align}", 0],
+      barr: ["\\begin{array}", 0],
+      earr: ["\\end{array}", 0],
+      del: "\\partial",
+      de: "\\mathrm{d}",
+      th: "\\mathrm{th}",
+      ie: "\\textit{i.e.}~",
+      eg: "\\textit{e.g.}~",
+      wrt: "\\textit{w.r.t.}~",
+      etc: "\\textit{etc.}~",
+      C: "\\mathbb{C}",
+      R: "\\mathbb{R}",
+      M: "\\mathcal{M}",
+      N: "\\mathcal{N}",
+      bz: "\\mathbf{z}",
+      mb: ["\\mathbf{#1}", 1],
+      mc: ["\\mathcal{#1}", 1],
+      mbb: ["\\mathbb{#1}", 1],
+      mf: ["\\mathfrak{#1}", 1],
+      unit: ["\\mathbf{\\hat{#1}}", 1],
+      id: "\\mathbb{1}",
+      vect: ["\\boldsymbol{#1}", 1],
+      bvec: ["\\boldsymbol{\\vec #1}", 1],
+      expect: ["\\langle #1\\rangle", 1],
+      innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+      expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+      bra: ["\\langle #1 \\vert", 1],
+      ket: ["\\vert #1 \\rangle", 1],
+      supersc: ["^{\\textrm{#1}}", 1],
+      subsc: ["_{\\textrm{#1}}", 1],
+      sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+      norm: ["\\lVert #1 \\rVert", 1],
+      rket: ["\\vert #1 ]", 1],
+      rbra: ["[ #1 \\vert", 1],
+      rinnerp: ["[ #1 \\vert #2 ]", 2],
+      bket: ["\\vert #1 )", 1],
+      bbra: ["( #1 \\vert", 1],
+      binnerp: ["( #1 \\vert #2 )", 2],
+      innerpA: ["\\langle #1 \\vert #2 ]", 2],
+      innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+      onehalf: "\\frac{1}{2}",
+      Tr: "\\mathrm{Tr}",
+      Cyl: "\\mathrm{Cyl}",
+      Riem: "\\mathrm{Riem}"
+    }
+  }
+};
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantumofgravity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/space-cadet"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/vaidphysics"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Battling Depression: A Personal Account (Part 1)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 3, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="prologue" class="level1">
+<h1>Prologue</h1>
+<p>Depression is a terrible disease. What amplifies its debilitating effect is its invisibility. There are no physical symptoms apparent to the external observer. In the absence of any concrete diagnostic criteria via either brain imaging or biochemical analysis, its presence must be inferred only indirectly and based primarily upon the testimony of the afflicted individual. Due to this reliance on personal testimony rather than on objective evidence, it is easy to dismiss the existence of depression in an individual as simply being an “imagined” affliction rather than a genuine pathology. To make matters worse, from time to time so-called “gurus”, “sadhgurus” and other “moral leaders” setback the cause of mental illness education by decades by declaring that “most depression is self-created”! In light of this lack of social acceptance of the reality of mental illness it becomes imperative that those who have suffered or are currently suffering from any form of mental illness should come out of the shadows and reveal their condition to the world and provide testimony to the fact that depression is not only very real but also treatable and nothing to hide or be ashamed of. It is <em>not</em> a self-created problem anymore than flu or malaria are self-created. It is a disease whose complete origins we have yet to understand, but what is clear, is that with proper medication and therapy depression can be managed allowing people to lead their lives without the constant torment and mental turmoil associated with this illness. <strong>I have been suffering from clinical depression since I was about fourteen years old.</strong> I lost a major portion of my teenage years to depression. I was late by four years in joining college because of two lost years between 10th and 12th grades and another two years lost following 12th grade. As a young boy I had become intensely fascinated with physics. I read Stephen Hawking’s classic <em>Brief History of Time</em>, Asimov’s <em>Atom</em>, <em>Superforce</em> by Paul Davies and Gamow’s <em>The First Three Minutes</em>. At the same time I devoured Ronald W. Clark’s epic biography of Albert Einstein. However, as was expected of any well-trained Indian child from that era - not that those expectations have evolved a great deal over time - I was expected to score top marks in my regular classes and to eventually score a top rank in one or more of a dozen different entrance examinations and bag a coveted seat in a top-ranked engineering school. Of course, none of these things happened.</p>
+</section>
+<section id="onset" class="level1">
+<h1>Onset</h1>
+<p>Around 8th grade, I rapidly started to realize that I was a fish out of water. There was no room for creativity, open-mindedness or independence - whether social or academic - in the suffocating social environment of the Indian middle and upper middle classes to which my family belonged. I began to be viewed more and more as an oddity. A highly intelligent oddity with great potential but an oddity nevertheless. It also just happens to be the case that there is a general inclination towards mental illness in my extended family. There is no clinical evidence for this since I am the only one in my family to actually have acknowledged my problem and to have gotten treatment for it. But there is plenty of anecdotal evidence and experiences collected over the years which leave little room for doubt that several members of my extended family tree suffer from one or the other form of depression/mental illness. Further my family life was deeply disturbed. Ours was not a happy family by any stretch of the imagination. I have three sisters, two older and one younger. I don’t want to pin any blame for all the fights, arguments and drama our family members participated in on nearly every day of the year. It could be that everybody else in my family was a perfectly well-balanced individual, that my parents made no mistakes in bringing up four precocious children, and that it was only my own selfishness and misbehavior which caused all this constant turmoil in our family. The precise cause is not as important as the end result this situation had on me. It meant that I lived in a near constant dread of returning home. I tried to find refuge anywhere I could - spending time as much time at the homes of various friends as decency would permit, taking walks in the roads near my home until hunger beckoned, moving to my Mama’s (Mother’s brother) home or to the home of my Bua (Father’s sister) and long over staying my welcome at both places by weeks or months. Each of these escapes provided only a temporary reprieve from the utter collapse of my emotional self which awaited me on the inevitable return to my own home. And finally one day in the spring of 1995, sometime after my fifteenth birthday, I ran out of places to escape to. That day I awoke to find myself involuntarily admitted to the psychiatric ward of one of Delhi’s allegedly “better” government hospitals.</p>
+</section>
+<section id="misdiagnosis-and-mistreatment" class="level1">
+<h1>Misdiagnosis and Mistreatment</h1>
+<p>As I was told years later, the story goes like this. I was sitting and reading the newspaper on the sunlit balcony of our 7th floor government flat when I was found unconscious and unresponsive by my Fufa (Father’s sister’s husband), someone who I was always felt very close to and whom I always believed to be one of the only individuals in my world who understood what I was going through. Of course, why you would take an unconscious and unresponsive individual to a psychiatric ward instead of just a regular emergency ward has never been made entirely clear to me. In hindsight it is not surprising that to those around me I would have appeared to clearly be in need of some sort of psychiatric treatment. By that age (15) I had come to the conclusion that I was living in a severely broken society where dogma, blind faith and superstition prevailed over curiosity, reason and criticism and where someone like myself who cared more about doing what I thought was the right thing than about keeping up appearances was never going to be fully accepted. The only problem was that I was not smart enough to keep my observations to myself and to assume that there actually was an appetite in those around me - my family, friends, classmates, teachers and others - to hear what sounded like the unending whining of a spoiled son of a highly privileged upper middle class Indian family. I was promptly diagnosed, or misdiagnosed as I would later come to understand, with “paranoid schizophrenia” by an allegedly famous psychiatrist (Dr B. R. Agnihotri), who to me appeared to be in urgent need of psychiatric help himself. I was forced to take several rounds of electroconvulsive therapy. As an underage person I had no say in the matter. I remember quite clearly being rolled down the hall in a medical cart to the ECT station. There I would plead and beg with the “gentle” doctors and nurses around me not to go ahead with the procedure. But as I was held down by several pairs of hands, a gag was placed in my mouth to prevent me from biting my own tongue and at the flick of a switch large amounts of electric current were sent surging through my skull. I would wake up at some undetermined time in the future, with my head groggy as feeling as if I was in a mental fog. Exactly how many times I underwent this barbaric treatment I do not know. As someone who viewed their brain as their most precious asset I was not pleased that my cerebellum was being subjected to high voltage shocks in the misguided hopes of ameliorating my non-existent schizophrenia. After repeated pleading with my parents I was finally discharged from that hospital and taken home. However, every movement I made was assiduously monitored either by the junior government peons assigned to my father by virtue his job as a high ranking civil servant or by my own family members. I was compelled, on threat of being returned to Dr Agnihotri’s “care” in Govind Ballabh Pant Hospital, to take the anti-schizophrenia drug Clozapine. Most likely as a consequence of this medication I developed a form of <a href="https://www.webmd.com/schizophrenia/tardive-dyskinesia">tardive dyskinesia</a> which still manifests itself today in the urge to compulsively touch certain objects in my immediate environment in certain patterns for no apparent reason. Usage of Clozapine can also lead to several <a href="https://www.pharmaceutical-journal.com/learning/learning-article/how-clozapine-patients-can-be-monitored-safely-and-effectively/11138788.article">life-threatening conditions</a> in patients. Regular blood tests are required to monitor for the presence of any of these conditions. Once every month or so I would be dutifully escorted to a clinician for this painful ritual. This continued for a year and a half or so. Of course, I don’t remember the exact duration. In fact, due to the ECT most of my preexisting memories had been irreversibly mangled and the ability to form new memories appeared to have been severely degraded. It was a daily struggle for me to continually remind myself how important it was for me to not forget what I had experienced and to surrender into the welcoming embrace of a numb and hazy existence where I accepted all that had happened and all that was happening without any resentment or anger. Some years later, when I was nineteen or so, after succumbing to a combination of angry demands and desperate pleading my mother accompanied me back to the hospital in order to allow me to inspect my medical file. I remember sitting in front of two doctors along with my mother as I demanded that I be allowed to see my file. After some time an underling was dispatched to procure the file. I waited with great eagerness to see the documentation which would prove beyond a doubt the horrors I had been subjected to as a fifteen year old. Finally the office peon came back carrying a file folder. In what would have come as no great surprise to a smarter person, but came as a shock to me, the folder was indeed there, but it had no contents! Not a single shred of paper. Not a single record of admission, or discharge. Not a single record of the medications I was given or the treatments I was administered or the doctors who prescribed them. I soon understood that a perverse drama was being played out for my benefit, through which my parents could claim that they had made every effort to allow me to inspect my medical history but it just so happened that those documents had been “accidentally misplaced” by someone in the intervening gap of around four years. Of course, it could be that my parents had no role in the apparent disappearance of my medical record. But you know that feeling you get when you realize you’re being played for a chump by those around you? That feeling was as strong as it could be in me at that moment.</p>
+</section>
+<section id="aftermath" class="level1">
+<h1>Aftermath</h1>
+<p>Once the initial ECT generated haze started to subside I started to read every piece of information I could find, online and offline, on mental illness and schizophrenia. It became abundantly clear to me that no sane person could say that my symptoms were those of schizophrenia rather than of the rather less severe, but still debilitating, condition of clinical depression. No amount of explanations or entreaties on my part could convince my parental guardians that the so-called “famous” psychiatrist had made a misdiagnosis. Of course, accepting this would also imply acceptance of their own role in my mistreatment at the hands of a narcissistic quack and I lived in an age where accepting ones mistakes, especially where your children were concerned, was considered a sin. In a manner of speaking, my greatest mistake was living in a society in which disagreeing against social norms was considered a sign of madness. From this perspective it didn’t really matter that I did not, in fact, exhibit the symptoms of clinical schizophrenia. To be declared a schizophrenic in India in those days, it was sufficient to be a person who believed they should follow their own dreams rather than those foisted upon them by social and cultural dogma. The ECT sessions caused substantial permanent memory loss. I have only very vague memories of that period in my life. If I am able to recount any details it is because I worked very hard at the time to commit those facets of my experience to my memory for future retrieval. The effects of clozapine on my non-schizophrenic brain, were no less severe. Clozapine is an extremely strong anti-psychotic. Anti-psychotics are given that name because their use is to combat psychosis. Their action on the brain and the resulting physiological effects are not subtle. This is necessarily the case since psychosis by its very nature is a manifestation of extreme, uncontrollable behavior. Giving anti-psychotics to a non-psychotic person is like putting a hammer to their brain. Fuzziness, drooling, tardive dyskinesia and a dozen other unpleasant side-effects can be the result of using drugs such as Clozapine. My family, friends and close relatives all observed and were subjected to the resulting erratic traits in my behavior. Of course, they attributed these traits to my “mental illness” and not to the fact that I was being the wrong medicines. I can’t blame them for this, though. They didn’t know any better. They couldn’t have known any better. I belonged to an upper middle class family and my close family came from a background of traders and salespeople. Knowledge of the functioning of biochemical pathways, brain biochemistry, chemical and biological effects of anti-psychotic medication was as alien to them as the idea that a child might want to determine its own destiny and path in life. Eventually, after much begging, pleading and bargaining my parents consented to allowing me to stop using Clozapine. I suppose, when they realized that they couldn’t force me to take the pills without resorting once more to involuntary commitment in a medical facility, they thought it best to cede the battle. We had all been through enough. I had already lost a great deal of time at what is considered a crucial juncture in the academic career of any future trailblazer. My parents, for all their faults, are still only human. Having to see their only son undergo such dehumanizing treatment could not have been easy for them either. That experience must have left them more drained and broken than I could possibly comprehend at that time being so deeply overcome by my own despair and anger at the course my life had taken thus far. (to be continued...)</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantumofgravity\.com\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

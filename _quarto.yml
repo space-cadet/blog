@@ -1,0 +1,97 @@
+project:
+  type: website
+
+website:
+  title: "quantumofgravity"
+  description: "Physics, Computing, and the Nature of Reality"
+  site-url: https://quantumofgravity.com/blog
+  navbar:
+    right:
+      - text: Home
+        href: index.qmd
+      - text: Blog
+        href: blog.qmd
+      - text: About
+        href: about.qmd
+      - text: Research
+        href: research.qmd
+      - icon: github
+        href: https://github.com/space-cadet
+      - icon: twitter
+        href: https://twitter.com/vaidphysics
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    mainfont: "Charter, serif"
+    sansfont: "Inter, sans-serif"
+    fontsize: "1.1rem"
+    linestretch: "1.6"
+    css: styles.css
+    bibliography:
+      - bib_library.bib
+      - bib_aliases.bib
+    cite-method: citeproc
+
+    include-in-header:
+      text: |
+        <script>
+        window.MathJax = {
+          tex: {
+            macros: {
+              bite: ["\\begin{itemize}", 0],
+              eat: ["\\end{itemize}", 0],
+              beq: ["\\begin{equation}", 0],
+              eeq: ["\\end{equation}", 0],
+              rarrow: "\\rightarrow",
+              beqa: ["\\begin{align}", 0],
+              eeqa: ["\\end{align}", 0],
+              barr: ["\\begin{array}", 0],
+              earr: ["\\end{array}", 0],
+              del: "\\partial",
+              de: "\\mathrm{d}",
+              th: "\\mathrm{th}",
+              ie: "\\textit{i.e.}~",
+              eg: "\\textit{e.g.}~",
+              wrt: "\\textit{w.r.t.}~",
+              etc: "\\textit{etc.}~",
+              C: "\\mathbb{C}",
+              R: "\\mathbb{R}",
+              M: "\\mathcal{M}",
+              N: "\\mathcal{N}",
+              bz: "\\mathbf{z}",
+              mb: ["\\mathbf{#1}", 1],
+              mc: ["\\mathcal{#1}", 1],
+              mbb: ["\\mathbb{#1}", 1],
+              mf: ["\\mathfrak{#1}", 1],
+              unit: ["\\mathbf{\\hat{#1}}", 1],
+              id: "\\mathbb{1}",
+              vect: ["\\boldsymbol{#1}", 1],
+              bvec: ["\\boldsymbol{\\vec #1}", 1],
+              expect: ["\\langle #1\\rangle", 1],
+              innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+              expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+              bra: ["\\langle #1 \\vert", 1],
+              ket: ["\\vert #1 \\rangle", 1],
+              supersc: ["^{\\textrm{#1}}", 1],
+              subsc: ["_{\\textrm{#1}}", 1],
+              sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+              norm: ["\\lVert #1 \\rVert", 1],
+              rket: ["\\vert #1 ]", 1],
+              rbra: ["[ #1 \\vert", 1],
+              rinnerp: ["[ #1 \\vert #2 ]", 2],
+              bket: ["\\vert #1 )", 1],
+              bbra: ["( #1 \\vert", 1],
+              binnerp: ["( #1 \\vert #2 )", 2],
+              innerpA: ["\\langle #1 \\vert #2 ]", 2],
+              innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+              onehalf: "\\frac{1}{2}",
+              Tr: "\\mathrm{Tr}",
+              Cyl: "\\mathrm{Cyl}",
+              Riem: "\\mathrm{Riem}"
+            }
+          }
+        };
+        </script>
+

@@ -1,0 +1,124 @@
+---
+title: "Implementing Quaternions in Julia"
+date: "2019-05-18"
+categories: []
+slug: "implementing-quaternions-in-julia"
+---
+![Newton chilling and Einstein contemplating in IUCAA courtyard.](/wp-content/uploads/2019/05/IMG_20190513_171206_HDR-e1557944595462-300x111.jpg)
+
+[Julia](https://julialang.org/) is making waves in the scientific programming community as *the* language to learn if you truly want to be a computational code ninja. I won't list out all the features which make Julia such an incredilicious language to learn. You can't go clicks on the internet without stumbling into a paean to Julia, so one more such list would be highly redundant. I will however use one example to illustrate what makes Julia that much more expressive, convenient and, indeed, fast compared to almost any language out there for scientific computing. Mind you, I am very much a Julia novice so I'm likely to get the technical jargon wrong in parts. I pray to the Julia-Gods for forgiveness for such infractions. We all know what complex numbers are (right?) and many people have also heard of their cousins - the quaternions. Here's a quick reminder to jog your memory. Those who are upto speed on their complex number and quaternions can jump ahead to the juicy parts in the section on implementing quaternions in either [Python](#in-python) or in [Julia](#in-julia) ^[1](#fn-1024-MarkdownLinks)^
+
+# Complex Numbers
+
+Complex numbers are "tuples" (a fancy word for a set consisting of two objects) of real numbers, i.e. given $a, b \in \mathbb{R}$, one can define a complex number: $z = a + \imath b,$which is an element of the so-called "complex plane"$\mathbb{C}$which is nothing more than the two-dimensional Euclidean plane$\mathbb{R}^2$with one axis identified as "real" and the other as "imaginary". The funny looking "i" multiplying$b$in the expression above, is called the "unit imaginary" and is supposed to represent the square of root of$-1$: $\imath = \sqrt{-1}.$At this point, you're probably thinking "what a load of \..., you can't take square roots of negative numbers!" And, you would be right! Indeed we can't express the square root of a negative number in terms of real numbers. But, mathematicians being the wizards they are, decided there is no law which stops us from writing down the *formal* expression$\imath = \sqrt{-1}$. If you can suspend disbelief for a second, and just accept this fact, then all sorts of wonderful things become possible. Given any two complex numbers we can add, subtract or multiply them to obtain *another* complex number: 
+
+$$\n z_1 + z_2 & = (a_1 + a_2) + \imath (b_1 + b_2) \nonumber \n z_1 - z_2 & = (a_1 - a_2) + \imath (b_1 - b_2) \nonumber \n z_1 z_2 & = (a_1 a_2 - b_1 b_2) + \imath (a_1 b_2 + a_2 b_2), \\$where in the last line we have used the fact that$(\imath b_1) (\imath b_2) = \imath^2 b_1 b_2 = - b_1 b_2$. We can also divide complex numbers by other complex numbers. However, in order to write the result of a division operation$z_1/z_2$as another complex number, we have to introduce a new operation called "complex conjugation" denoted by an asterix${}^\*$. Under complex conjugation, real numbers are unchanged, but purely imaginary numbers becomes negative:$a^\* = a; \quad (\imath b) = - \imath b; \Rightarrow z^\* = (a + \imath b)^\* = a - \imath b$where$a, b \in \mbb{R}$. The result of dividing one complex number by another can then be expressed as follows:$\n \frac{z_1}{z_2} & = \frac{a_1 + \imath b_1}{a_2 + \imath b_2} \nonumber \n & = \frac{(a_1 + \imath b_1)}{(a_2 + \imath b_2)} \frac{(a_2 - \imath b_2)}{(a_2 - \imath b_2)} \nonumber \nonumber \n & = \frac{a_1 a_2 + b_1 b_2 + \imath (b_1 a_2 - b_2 a_1)}{a_2^2 + b_2^2} \nonumber \n & = \frac{1}{\|z_2\|^2} z_1 z_2^\*. \\$In the second line we have multiplied the numerator and denominator by$z_2^\*$. In the third line we have used the fact that the multiple of a complex number with its complex conjugate yields a real number ($z z^\* = a^2 + b^2 \in \mbb{R}$) to get rid of the imaginary unit in the denominator. The real and imaginary parts of$z_1/z_2$can then be written as:$\mf{Re}(z_1/z_2) = \frac{a_1 a_2 + b_1 b_2}{a_2^2 + b_2^2}; \quad \mf{Im}(z_1/z_2) = \frac{b_1 a_2 - b_2 a_1}{a_2^2 + b_2^2}.$In this way we can perform all the standard arithmetical operations with complex numbers. We can go on to define functions on the complex plane$f: \mbb{C} \rightarrow \mbb{C}$. All the usual functions on real numbers, such as polynomials$x^n$, roots$x^{1/n}$, trignometric and logarithmic functions$\sin(x), \log(x)$, can be generalized straightforwardly to take complex numbers as their arguments instead of real numbers.
+This only touches the tip of the proverbial iceberg. There is a lot more to say about complex numbers, but this introduction will suffice to enable us to talk about our true goal - the quaternions.
+<figure><img src="/wp-content/uploads/2019/05/IMG_20190513_171153_HDR-e1557944746169-300x83.jpg" alt="Aryabhatta and Kepler showing off their moves in IUCAA courtyard." /><figcaption>Aryabhatta and Kepler showing off their moves in IUCAA courtyard.</figcaption></figure>
+<h1>Quaternions</h1>
+Quaternions are just like complex numbers, with one minor difference. Instead of just <em>one</em> imaginary axis as in the complex numbers, quaternions have <em>three</em> different imaginary axes. Blew your mind, right? Well, not really. We don't have any difficulties in extending the real line to the two or three-dimensional spaces$\mbb{R}^2$and$\mbb{R}^n$. We are comfortable defining vectors in$\mbb{R}^n$as tuples of$n$real numbers:$\vect{v} = (v_1, v_2, \ldots, v_n)$and performing all the usual arithmetical operations (except for division) with these objects. As we have just seen, we can define a new kind of axis which represents the "imaginary" dimension. Well, what's to stop us from extending$\mbb{C}$by adding <em>more</em> imaginary dimensions? Nothing!
+Let's start small and add just one extra imaginary axis. Our "triplex" numbers would then have the form:$\gamma = a + i b + j c,$where, expectedly,$i^2 = j^2 = -1$<sup id="fnref-1024-kmath"><a href="#fn-1024-kmath" class="jetpack-footnote">2</a></sup> and$a,b,c \in \mbb{R}$. It turns out that the set of triplex numbers is not closed under the arithmetic operation of multiplication. We soldier on ahead and add one more dimension:$q = a + i b + j c + k d,$where, once again:$\label{eqn:quaternions-rule1}\ni^2 = j^2 = k^2 = -1, \\$However, now there is a new rule in town. When multiplying any two imaginary components with each other one gets the third kind of imaginary. This can be expressed as:$\label{eqn:quaternions-rule2}\ni \cdot j = k; \quad j \cdot k = i; \quad k \cdot i = j \\$What about$j \cdot i$? We can use the expression$j \cdot k = 1$from \eqref{eqn:quaternions-rule2} above, to write:$j \cdot i = j \cdot j \cdot k = -k$We can summarize the rules for quaternion imaginaries:
+<table>
+<thead>
+<tr>
+  <th>Operation</th>
+  <th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Complex Conjugation</td>
+  <td>$i^\* = -i; \\\\; j^\* = -j; \\\\; k^\* = -k$</td>
+</tr>
+<tr>
+  <td>Square</td>
+  <td>$i^2 = j^2 = k^2 = -1$</td>
+</tr>
+<tr>
+  <td>Complex Multiplication</td>
+  <td>$i \cdot j = k; \\\\; j \cdot k = i; \\\\; k \cdot i = j$with$j \cdot i = -k$, etc.</td>
+</tr>
+</tbody>
+</table>
+One can now use these rules, in addition to the usual rules for addition and subtraction, to perform all arithmetical operations with quaternions. Let me illustrate with the example of multiplying two quaternions$p_1$and$p_2$to get a third quaternion$p_3$. If we use the notation$p_n = a_n + i b_n + j c_n + k d_n$to represent the$n{}^\text{th}$quaternion in terms of its components, then for the components of$p_3$in terms of the components of$p_1$and$p_2$we obtain the following expression:$\n a_3 & = a_1 a_2 - b_1 b_2 - c_1 c_2 - d_1 d_2 \nonumber \n b_3 & = a_1 b_2 + a_2 b_1 + c_1 d_2 - c_2 d_1 \nonumber \n c_3 & = a_1 c_2 + a_2 c_1 + d_1 b_2 - d_2 b_1 \nonumber \n d_3 & = a_1 d_2 + a_2 d_1 + b_1 c_2 - b_2 c_1 \\$This introduction is sufficient to allow us to move on to discuss implementation of quaternions in the two commonly used scripting languages - Python and Julia.
+<h1 id="in-python">In Python</h1>
+There are two ways to implement custom types in Python. One can either follow the procedure for constructing custom types which can be manipulated in the same way as core Python types such as strings and lists.
+<h2 id="custom-types">Custom Types in Python</h2>
+The following code provides the basic template for defining custom types in Python 2.7. To begin with one has to write the skeleton C code base, implement all the relevant methods and finally compile everything using Cython or some other C/Python compiler.
+<p><a href="https://gist.github.com/space-cadet/4e106f3de8e742573f0f87788591e423">https://gist.github.com/space-cadet/4e106f3de8e742573f0f87788591e423</a></p>
+The procedure is not too different in Python 3.7.
+<p><a href="https://gist.github.com/space-cadet/1106bac4e90df09733c11541e6bd87c3">https://gist.github.com/space-cadet/1106bac4e90df09733c11541e6bd87c3</a></p>
+This is the hard way to implement a custom type in Python, but also the only way if one wants the custom type to act and behave like any other of Python's core types. A non-trivial amount of C code, C-Python interoperability and Python code is needed for this purpose.
+<h2>Examples: <code>numpy_quaternion.c</code></h2>
+Let us look at another example which aims to extend the core capabilities of the <code>numpy</code> module to include quaternion arithmetic. The file shown is <code>numpy_quaternion.c</code>, containing the C code implementing code for construction quaternion objects in Python. A mere 1,628 lines long. And this does not include the C header files and various other supporting C and Python codes.
+<p><a href="https://gist.github.com/space-cadet/bd593380cd1c5529191026d5a51f0f2b">https://gist.github.com/space-cadet/bd593380cd1c5529191026d5a51f0f2b</a></p>
+<h2>Examples: <code>quaternion.py</code></h2>
+A second, somewhat simpler implementation in Python without worrying about optimizing computations using C code, defines quaternions as a an ordinary class - rather than a core Python type - with the quaternion data stored in a numpy array. Not counting the additional utility functions for interpolating between rotations and such it comes out to about 525 lines of code. While the code itself is fairly straightforward, easy to read and requires no knowledge of C or CPython, it will suffer from the performance penalties imposed due to Python's relaxed type inference scheme.
+<p><a href="https://gist.github.com/space-cadet/1e843909d111698bc8ab4b448939cdb8">https://gist.github.com/space-cadet/1e843909d111698bc8ab4b448939cdb8</a></p>
+<h1 id="in-julia">In Julia</h1>
+Let us look at the same functionality implemented in Julia. Only 296 lines long. No need for separate C code in order to get C-like speeds. Syntax is simpler than the equivalent Python implementation. Operator overloading methods can be written in a very simple manner. For instance the operator <code>+</code> for adding two quaternion types has a single line definition:
+<pre><code class="language-julia">(+)(q::Quaternion, w::Quaternion) = Quaternion(q.s + w.s, q.v1 + w.v1, q.v2 + w.v2, q.v3 + w.v3)
+</code></pre>
+<p><a href="https://gist.github.com/space-cadet/e042973f188213edc855893317d8af95">https://gist.github.com/space-cadet/e042973f188213edc855893317d8af95</a></p>
+<h1>Julia vs Python</h1>
+I ran some sample code to see what the differences between the Julia and Python implementations would arise. In particular I defined a simple method which takes a quaternion, a positive integer$n$and a mathematical function (such as$\exp, \sin, \log$, etc) as inputs and recursively calls the function on the given quaternion$n
+$$
+
+ times. Here is the definition of the method in Python
+
+``` python
+def recursive_func(q, ntimes, func):
+    for i in range(ntimes):
+        q = func(q)
+        print(q)
+    return
+```
+
+and in Julia:
+
+``` julia
+function recursive_func(q::Quaternion, n::Int, func)
+    for _ in 1:n
+        q = func(q)
+        print(q,"\
+")
+    end
+end
+```
+
+## Math Overflow Errors
+
+One very interesting aspect is that whereas in Python when the result of a computation exceeds the numeric bounds of the system, the program throws an exception and crashes:
+
+<https://gist.github.com/space-cadet/1d86ce7d55740b695bded2a928d3bcff>
+
+whereas in Julia it just continues as if nothing wrong had happened:
+
+<https://gist.github.com/space-cadet/78d67b84fdcc5f9c102d7a4c9977a440>
+
+Now, of course, this isn't exactly a good thing. In general when your computation gives you values which are out of bounds you *want* it to *not* continue as usual. Though, arguably, the Julia behavior is better in some situations when you don't care much about out-of-bounds errors but are more concerned about not having the program crash halfway through.
+
+## Floating Point Precision
+
+Recursively applying the $\log$ function to a random quaternion in Python yields the following output:
+
+<https://gist.github.com/space-cadet/d228836afca54c507ad8a4ec35d146e7>
+
+Note the limited floating point precision of the output and also that sometime into the calculation the output seems to stabilize around a fixed point. Let's look at the same function applied to the same quaternion input value in Julia:
+
+<https://gist.github.com/space-cadet/e24f7f2b4fe9b910edc5d1431c5e57f6>
+
+By default, Julia uses `Float64` types for floating point calculations, though that can be adjusted according to need. It is clear that Julia is working at a much higher floating point precision than the equivalent Python code. Even though the output appears to stabilize in Julia too, one can see that it doesn't *exactly* reach a fixed point because of the floating point accuracy in Julia.
+
+## Runtimes
+
+The computations above in Python and Julia took \~ 30 ms and 141 ms respectively. It would appear that the Python code is three times faster than the Julia code. Then again, this could be just because of the reduced precision arithmetic in the Python computation.
+
+# Conclusion
+
+Julia does indeed have deep structural advantages over Python as a fast scriptable language for numerical computation. The ability to easily define custom types, nearly arbitrary precision code built into the core and speed (allegedly) are some of the features which distinguish Julia from Python. That being said, with the results shown above it is hard to unambiguously agree with the premise laid out in the introduction that Julia is inarguably better and faster than Python and other languages for numerical computation. In a follow-up post on "Dual Numbers and Automatic Differentiation in Julia" I will cover an application of Julia which, to the best of my knowledge, has no parallel in Python and which, I hope, will conclusively demonstrate Julia's technical superiority over Python. Of course, Python is not going anywhere anytime soon. From statistical physics we know that states which cost the lowest in energy have the greatest chance of being occupied. So it is in life and coding. It requires a far lower expenditure of time and energy to learn Python than it does for Julia. As long as this aspect does not change, regardless of its overwhelming technical advantages, Julia will remain a niche language used mostly for numerical computing and data analysis while Python continues to be used for the vast majority of non-numerical coding applications.
+
+------------------------------------------------------------------------
+
+1.  [Note to self. In Markdown, one can easily add links to other sections of the document. For example the section [Julia](#in-julia) can be linked to using the code: `[Julia](#in-julia)`. In addition you need to add a header id as explained in the online [Markdown extra](https://michelf.ca/projects/php-markdown/extra/) reference. For instance, here the code for doing so is: `# In Julia {#in-julia}`. The part in curly braces is the header id which is used for hot-linking. ]{#fn-1024-MarkdownLinks}
+2.  [Sadly, for the quaternions we will no longer be able to use the symbol $\imath$for the unit imaginary and have to go back to the lowly$i$. The reason being, that while $\LaTeX$ provides for `\imath` ($\imath$) and `\jmath` ($\jmath$) commands, there is no `\kmath` command. So, if we don't want one of our imaginary letters to look out of whack with the other two we have to drop the fancy lettering. ]{#fn-1024-kmath}

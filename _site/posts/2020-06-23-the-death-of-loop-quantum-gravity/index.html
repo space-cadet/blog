@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2020-06-23">
+
+<title>``Loop Quantum Gravity is Dead … ’’ – quantumofgravity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f384962f7b91d97641763c29bba4a4a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      bite: ["\\begin{itemize}", 0],
+      eat: ["\\end{itemize}", 0],
+      beq: ["\\begin{equation}", 0],
+      eeq: ["\\end{equation}", 0],
+      rarrow: "\\rightarrow",
+      beqa: ["\\begin{align}", 0],
+      eeqa: ["\\end{align}", 0],
+      barr: ["\\begin{array}", 0],
+      earr: ["\\end{array}", 0],
+      del: "\\partial",
+      de: "\\mathrm{d}",
+      th: "\\mathrm{th}",
+      ie: "\\textit{i.e.}~",
+      eg: "\\textit{e.g.}~",
+      wrt: "\\textit{w.r.t.}~",
+      etc: "\\textit{etc.}~",
+      C: "\\mathbb{C}",
+      R: "\\mathbb{R}",
+      M: "\\mathcal{M}",
+      N: "\\mathcal{N}",
+      bz: "\\mathbf{z}",
+      mb: ["\\mathbf{#1}", 1],
+      mc: ["\\mathcal{#1}", 1],
+      mbb: ["\\mathbb{#1}", 1],
+      mf: ["\\mathfrak{#1}", 1],
+      unit: ["\\mathbf{\\hat{#1}}", 1],
+      id: "\\mathbb{1}",
+      vect: ["\\boldsymbol{#1}", 1],
+      bvec: ["\\boldsymbol{\\vec #1}", 1],
+      expect: ["\\langle #1\\rangle", 1],
+      innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+      expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+      bra: ["\\langle #1 \\vert", 1],
+      ket: ["\\vert #1 \\rangle", 1],
+      supersc: ["^{\\textrm{#1}}", 1],
+      subsc: ["_{\\textrm{#1}}", 1],
+      sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+      norm: ["\\lVert #1 \\rVert", 1],
+      rket: ["\\vert #1 ]", 1],
+      rbra: ["[ #1 \\vert", 1],
+      rinnerp: ["[ #1 \\vert #2 ]", 2],
+      bket: ["\\vert #1 )", 1],
+      bbra: ["( #1 \\vert", 1],
+      binnerp: ["( #1 \\vert #2 )", 2],
+      innerpA: ["\\langle #1 \\vert #2 ]", 2],
+      innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+      onehalf: "\\frac{1}{2}",
+      Tr: "\\mathrm{Tr}",
+      Cyl: "\\mathrm{Cyl}",
+      Riem: "\\mathrm{Riem}"
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantumofgravity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/space-cadet"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/vaidphysics"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">``Loop Quantum Gravity is Dead … ’’</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 23, 2020</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>... is a phrase that many high energy theorists, especially those of the stringy persuasion, long to hear. Fortunately, to borrow a phrase from Mark Twain, reports of the death of loop quantum gravity (LQG) are greatly exaggerated. Premature declarations of the imminent demise of LQG have a long history. The most recent one comes from a recent <a href="https://www.quantamagazine.org/black-hole-paradoxes-reveal-a-fundamental-link-between-energy-and-order-20200528/">article</a> in Quanta magazine:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Santos noted that “the only theory out there” that unifies the fundamental forces in a single framework is string theory. Rival approaches such as loop quantum gravity attempt to quantize gravity by dividing space-time into pieces, without connecting gravity with the other forces. <strong>“If the weak gravity conjecture is correct, things like loop quantum gravity are dead,”</strong> said Santos. [emph mine]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><a href="https://www.damtp.cam.ac.uk/person/jss55">Santos</a> follows in the footsteps of a long line of illustrious predecessors who have, at various points and for various reasons, declared LQG either dead or dying. I list a few of these here. Lubos Motl on his <a href="https://motls.blogspot.com/2006/01/pure-quantum-gravity-cannot-work.html">blog post</a> on the weak gravity conjecture states:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>... pure theories of quantum gravity cannot work. This conclusion ... applies to various loop quantum gravities, spin foams, causal and acausal, dynamical and non-dynamical triangulations, tetrahedronizations, and any other misinterpretations of quantum gravity that you have heard of.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>’t Hooft in <span class="citation" data-cites="t-Hooft2017Natures">(<a href="#ref-t-Hooft2017Natures" role="doc-biblioref">’t Hooft 2017</a>)</span> says:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>... there [has] been an abundance of completely wild concoctions [for theories of quantum gravity] that serious researchers have come up with. Lack of phantasy is not our problem [9][10][11]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>where the papers he cites as examples of “wild concoctions” include Sorkin’s causal set theory <span class="citation" data-cites="Sorkin2003Causal">(<a href="#ref-Sorkin2003Causal" role="doc-biblioref">Sorkin 2003</a>)</span>, Rovelli’s 1997 review of LQG <span class="citation" data-cites="Rovelli1998Loop">(<a href="#ref-Rovelli1998Loop" role="doc-biblioref">Rovelli 1998</a>)</span> and an review of causal dynamical triangulations (CDT) <span class="citation" data-cites="Ambjorn2014Quantum">(<a href="#ref-Ambjorn2014Quantum" role="doc-biblioref">Ambjørn et al. 2014</a>)</span>. To be fair to ’t Hooft, in the same paper he also expresses his long standing skepticism about string theory:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>... String theory was an interesting guess, but may well have been a too wild one.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Of course, there have been no dearth of similar declarations for string theory also. The most famous one was likely said by Stephen Hawking in 1979. Referring to the fact that <span class="math inline">\(N=8\)</span>supergravity (Where<span class="math inline">\(N\)</span>refers to the number of supersymmetric charges in the theory.) in 10 dimensions was a unitary and renormalizable theory Hawking apparently stated at a conference something along the lines of “Physics is over”. He said as much in a Physics Today article in 1981 <span class="citation" data-cites="Hawking1981Is-the-End-in-Sight">(<a href="#ref-Hawking1981Is-the-End-in-Sight" role="doc-biblioref">Hawking 1981</a>)</span> titled “Is the End in Sight for Theoretical Physics?” Of course, the implied conclusion is that String Theory, which was yet to cured of its troublesome anomalies in the so-called first superstring revolution of 1985, was also a dead, or even worse, an irrelevant theory. More recently there has been there has been critical tome titled “Note Even Wrong” by Peter Woit <span class="citation" data-cites="Woit2006Not-Even">(<a href="#ref-Woit2006Not-Even" role="doc-biblioref">Woit 2006</a>)</span>. The title is chosen for devastating effect to suggest that string theory, far from being right, is “not even wrong” in that it provides no falsifiable predictions which might be observable in any near or medium term (10-50 years) experiments. Of course, the lack of falsifiable predictions does not prove that none of the physical insights gained from string theory, such as the various dualities relating large and small scales and relating theories with large and small couplings, are going to be found to be relevant for whatever form a correct, consistent theory of quantum gravity might take in the future. On the contrary, any final theory of quantum gravity will contain many of the ingredients discovered by string theorists such as the existence of non-perturbative extended objects such as one dimensional strings and higher dimensional branes. The most important of these ingredients is the statement of holography(also known as the AdS-CFT correspondence or the Maldacena conjecture.) - that physics of a gravity theory in a<span class="math inline">\(D+1\)</span>dimensional anti de-Sitter (AdS) spacetime can be mapped to the physics of a<span class="math inline">\(D\)</span> dimensional conformal field theory living on the boundary of that spacetime. The important lesson is that string theory has gone through a great many ups and downs during its long history. In fact, the situation has now reached a stage that what used to be known as the “string landscape” is now referred to as the “string swampland” and there is an entire industry of research into “swampland” physics built around this concept. I wonder how many further stages of devolution will have to occur, from landscape to swampland to festering pits of doom, before string theorists try to adopt a more pragmatic and less dogmatic approach to quantum gravity research. The irony of the situation can be seen in this <a href="https://www.youtube.com/watch?v=VZbtV-bilu0">video</a> of a “Vision discussion” held at the end of the most recent Strings conference. Near the beginning of this discussion Daniel Harlow feels the need to state that “I think string theory is <strong>still</strong> a good candidate for quantum gravity”! During the rest of the discussion one would be hard pressed to find any actual references to string theory! Similarly, it is highly premature to declare LQG to be “dead” based on the possibility that the weak gravity conjecture might be correct. The physical insights which have been gained from LQG research, such as the quantization of geometric operators and the construction of a spin network basis for the Hilbert space of quantum geometry, are very much likely to be part of the ultimate quantum gravity theory. In fact, a lot of what passes as “string theory” research these days is actually work done in the context of so-called “tensor networks” applied to the AdS-CFT correspondence. And, unsurprisingly enough for those not inclined towards partisan politics such as myself, tensor networks <em>are nothing more than the spin networks of LQG</em>!(At this point one might ask how is this the case, to which I would reply “spin networks and tensor networks are the same thing in the same way as a red ball and a blue ball are both balls”! Further details to appear in a not too distant blog post or arXiv paper.) Of course, string theorists would be loath to admit the bitter fact that one of their primary successes, and one which comes closest to providing some sort of falsifiable predictions, ends up relying on precisely the same elementary building blocks discovered more than 30 years ago by theorists working on something known as loop quantum gravity! The weak gravity conjecture may very well be correct. There have been several recent claimed proofs in the literature <span class="citation" data-cites="Cheung2014Naturalness Cheung2018Proof Hamada2019Weak">(<a href="#ref-Cheung2014Naturalness" role="doc-biblioref">Cheung and Remmen 2014</a>; <a href="#ref-Cheung2018Proof" role="doc-biblioref">Cheung, Liu, and Remmen 2018</a>; <a href="#ref-Hamada2019Weak" role="doc-biblioref">Hamada, Noumi, and Shiu 2019</a>)</span>. However, all of these are based on arguments involving quantum field theory and string theory. What makes the most persuasive argument in favour of the WGC, in my humble opinion, is a paper by Shahar Hod <span class="citation" data-cites="Hod2017A-Proof">(<a href="#ref-Hod2017A-Proof" role="doc-biblioref">Hod 2017</a>)</span>. He shows, using arguments based on the relaxation times of the quasinormal modes of near-extremal Reissner-Nordstrom black holes, that the WGC must hold if a certain other conjecture (also framed and proved for several particular cases by Hod) regarding the “universal relaxation bound” for a thermodynamic system is true. This argument does not require any knowledge of the UV field theory and makes no assumptions about the nature of the quantum gravity theory. These facts are what make Hod’s proof particularly compelling in my view. Given the preponderance of evidence in favour of the WGC, is it correct to conclude that LQG is “dead”? The answer to that is a resounding “no”. On the contrary, this fact now throws up a challenge to the LQG community, who have thus far ignored the physics of charged extremal black holes for the most part, to explore that region of the theory space and to inquire what new insights the correctness of the WGC implies for the structure of LQG. The path towards this understanding, in my opinion, lies in understanding how to model the quantum geometry of charged AdS black holes along the lines discussed in one of my <a href="https://www.quantumofgravity.com/blog/2019/08/25/specific-heats-of-ads-black-holes-and-quantum-geometry/">previous blog posts</a>.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Ambjorn2014Quantum" class="csl-entry" role="listitem">
+Ambjørn, Jan, Andrzej Görlich, Jerzy Jurkiewicz, and Renate Loll. 2014. <span>“Quantum <span>Gravity</span> via <span>Causal Dynamical Triangulations</span>.”</span> <em>Springer Handbook of Spacetime</em>. <a href="https://doi.org/10.1007/978-3-642-41992-8_34">https://doi.org/10.1007/978-3-642-41992-8_34</a>.
+</div>
+<div id="ref-Cheung2018Proof" class="csl-entry" role="listitem">
+Cheung, Clifford, Junyu Liu, and Grant N. Remmen. 2018. <span>“Proof of the Weak Gravity Conjecture from Black Hole Entropy.”</span> <em>Journal of High Energy Physics</em> 2018 (10). <a href="https://doi.org/10.1007/JHEP10(2018)004">https://doi.org/10.1007/JHEP10(2018)004</a>.
+</div>
+<div id="ref-Cheung2014Naturalness" class="csl-entry" role="listitem">
+Cheung, Clifford, and Grant N. Remmen. 2014. <span>“Naturalness and the Weak Gravity Conjecture.”</span> <em>Physical Review Letters</em> 113 (5). <a href="https://doi.org/10.1103/PhysRevLett.113.051601">https://doi.org/10.1103/PhysRevLett.113.051601</a>.
+</div>
+<div id="ref-Hamada2019Weak" class="csl-entry" role="listitem">
+Hamada, Yuta, Toshifumi Noumi, and Gary Shiu. 2019. <span>“Weak <span>Gravity Conjecture</span> from <span>Unitarity</span> and <span>Causality</span>.”</span> <em>Physical Review Letters</em> 123 (5). <a href="https://doi.org/10.1103/PhysRevLett.123.051601">https://doi.org/10.1103/PhysRevLett.123.051601</a>.
+</div>
+<div id="ref-Hawking1981Is-the-End-in-Sight" class="csl-entry" role="listitem">
+Hawking, S W. 1981. <span>“Is the <span>End</span> in <span>Sight</span> for <span>Theoretical Physics</span>?”</span> <em>Physics Bulletin</em> 32 (1): 15. <a href="https://doi.org/10.1088/0031-9112/32/1/024">https://doi.org/10.1088/0031-9112/32/1/024</a>.
+</div>
+<div id="ref-Hod2017A-Proof" class="csl-entry" role="listitem">
+Hod, Shahar. 2017. <span>“A Proof of the Weak Gravity Conjecture.”</span> <em>arXiv Preprint</em>, 1–7. <a href="https://doi.org/10.1142/S0218271817420044">https://doi.org/10.1142/S0218271817420044</a>.
+</div>
+<div id="ref-Rovelli1998Loop" class="csl-entry" role="listitem">
+Rovelli, Carlo. 1998. <span>“Loop <span>Quantum Gravity</span>.”</span> <em>Living Reviews in Relativity</em> 1 (1). <a href="https://doi.org/10.12942/lrr-1998-1">https://doi.org/10.12942/lrr-1998-1</a>.
+</div>
+<div id="ref-Sorkin2003Causal" class="csl-entry" role="listitem">
+Sorkin, Rafael D. 2003. <span>“Causal <span>Sets</span>: <span>Discrete Gravity</span> (<span>Notes</span> for the <span>Valdivia Summer School</span>).”</span> <em>arXiv:gr-Qc/0309009</em>, September. <a href="https://arxiv.org/abs/gr-qc/0309009">https://arxiv.org/abs/gr-qc/0309009</a>.
+</div>
+<div id="ref-t-Hooft2017Natures" class="csl-entry" role="listitem">
+’t Hooft, Gerard. 2017. <span>“Nature’s <span>Book Keeping System</span>.”</span> <em>arXiv Preprint arXiv:1605.00027</em>, 127–35. <a href="https://doi.org/10.1007/978-3-319-44418-5_10">https://doi.org/10.1007/978-3-319-44418-5_10</a>.
+</div>
+<div id="ref-Woit2006Not-Even" class="csl-entry" role="listitem">
+Woit, Peter. 2006. <em>Not <span>Even Wrong</span>: <span>The Failure</span> of <span>String Theory</span> and the <span>Search</span> for <span>Unity</span> in <span>Physical Law</span></em>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantumofgravity\.com\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

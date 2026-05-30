@@ -1,0 +1,47 @@
+---
+title: "The Planck Scale May Be Closer Than It Appears"
+date: "2018-10-30"
+categories: []
+slug: "the-planck-scale-may-be-closer-than-it-appears"
+---
+> *Objects in the rearview mirror may be closer than they seem.*
+
+This statutory warning is familiar to anyone who has ever ridden in a passenger vehicle. Its intent is to warn the driver and the passengers to be careful while backing up in case the car collides with something which is closer than it actually seems in the rearview mirror. Today, the situation in high energy physics is somewhat similar. We are looking at what we think is the Planck scale in our (theoretical) rearview mirror. However, because the mirror distorts images we perceive the Planck scale as being farther away from our low-energy world than it actually is.
+
+# Planck Scale
+
+The Planck scale is defined as a collection of quantities with dimensions of length, time and energy which are obtained by suitable combinations of the fundamental physics constants: $G$(Newton's gravitational constant),$h$(Planck's constant) and$c$ (the speed of light). These quantities have the following dimensions:
+
+  Constant                    SI Value             Dimensions
+  --------------------- --------------------- ---------------------
+  $G$$9.11 \times 10^{-11}~kg^3/m~s^2$$[L^3 M^{-1} T^{-2}]$$\hbar = h/2\pi$$1.055 \times 10^{-34}~kg~m^2/s$$[L^2 M T^{-1}]$$c$$2.97 \times 10^8~m/s$$[L T^{-1}]$In terms of these dimensionful quantities, one can construct quantities with dimensions of length, time and energy known as the Planck length, Planck time and Planck energy respectively. These are easily determined by the following means. We take a combination of the three constants raised to different powers and determine the dimensions of this quantity.$[G^p h^q c^r] = [L^{3p+2q+r} M^{-p+q} T^{-2p-q-r}]$ By requiring that the resulting quantity has dimensions of length, time or energy we can determine the value of the power to which each constant must be raised in order to obtain the desired result. For instance, to obtain a quantity with dimensions of length we set: \begin{eqnarray}\n3p + 2q + r & = 1 \\n-p + q & = 0 \\n2p - q - r & = 0
+\end{eqnarray} Solving this system of equations for $p,q,r$we obtain for the value of the Planck length:$l_p = \sqrt{\frac{G \hbar}{c^3}} = 1.616 \times 10^{-35}m$ It is precisely the incredibly tiny value of this quantity which is often cited as the justification for the statement that we will be unable to observe quantum gravity effects in particle accelerators anytime in the near future.
+
+# Running of Constants
+
+However, this statement ignores one very important fact: *the fundamental constants are not really constant*. As any student of quantum field theory knows the coupling constants of any theory depend on the energy scale at which one measures those constants. This phenomenon is known as "*running of physical couplings*". An obvious conclusion which can be drawn from this observation is that the Planck length, along with other Planck scale quantities, must also necessarily be a function of the energy scale at which they are measured. 
+
+$$\label{eqn:planck-length-running}\nl_p := l_p [E] \\$We will add a superscript$l_p^E$to all physical quantities to indicate the energy scale at which we measure the quantity. For instance$l_p^0 \sim 10^{-35}~m$is the Planck length measured by a system in its own rest frame.
+Using the tools of QFT and our best guesses as to what form QFT might take at very high energies we have a rough understanding of how Newton's constant$G$and the speed of light$c$will change with increasing energy.
+<h1>Running of Planck Scale</h1>
+Independently of how these constants might "run", one can use physical reasoning to determine what possible forms the dependence (\ref{eqn:planck-length-running}) of$l_p$on the energy scale might take. There are three possibilities:
+<ol>
+    <li>$l_p(E)$does not depend on$E$.</li>
+    <li>$l_p(E)$is a monotonically decreasing function of$E$, i.e., as the energy scale increases, the Planck length decreases to smaller and smaller values.</li>
+    <li>$l_p(E)$is a monotonically increasing function of$E$</li>
+</ol>
+The first option can be ruled out, since as discussed above the constants which make up the Planck length are themselves functions of the energy scale. There remains the small possibility that the dependence of these constants on the energy scale is <em>precisely fine-tuned</em> in a manner that$l_p$ends up being independent of the energy scale. Such a scenario appears unlikely as it would require extreme fine-tuning the form of running of$G$,$c$and$h$<em>w.r.t.</em> the energy scale.
+The second option can also be ruled out. If the Planck scale became smaller with increasing energy scale, then this would imply that no current or future experiment (whether technologically feasible or not) would ever be able to reach a scale where quantum gravity effects will become important. As the energies involved in any experiment are scaled up, the Planck scale would simply move <em>further away</em>. The practical effect this would have would be to ensure that spacetime appears smooth and uniform at <em>any</em> experimentally achievable scale (whether in an artificial accelerator or in an astrophysical black hole accelerator). The search for quantum gravity would then be a pointless exercise since QFT on curved space would be a sufficient description for all physical phenomena. However, we <em>know</em> from other considerations that there must be a <em>minimum</em> length scale. Consequently, this option must be ruled out.
+The last option is the most interesting. It suggests that as the energy scale involved increases, the Planck scale comes <em>closer</em>. This would imply that there must exist some energy scale$\mc{E} \ll E_p^0$(where$E_p^0 \sim 10^{16}$TeV is the Planck energy measured at <em>our</em> energy scales) at which point the apparent Planck length will become equal to the energy scale of the experiment itself:$E_p^\mc{E} = \mc{E}$. We will refer to this value of the energy$\mc{E}$as the "critical energy".
+<h1>A Reachable Planck Scale?</h1>
+If the reasoning in the previous section holds, then we need not lose hope of ever being able to observe true quantum gravity effects. Clearly the critical energy$\mc{E} > 1$TeV, since the LHC has not yet encountered any effects attributable to quantum gravity. And even if$\mc{E} \ll 10^{16}$TeV, one needs to know the precise form of the dependence of$G$,$c$and$h$on energy scale to determine just what energies our colliders will need to achieve in order to reach$\mc{E}$. After all a value of$\mc{E} = 10^{10}$TeV would represent a much greater challenge for humanity than say$\mc{E} = 10^3$TeV  would. The latter could be achieved with the next generation of particle colliders putting a horizon of about 20 years for the date by which quantum gravity effects would be observed in particle collisions, vs. a time-horizon of a 100 years or more.
+In any case, one thing is certain. The present expectation that there is a vast <em>desert</em> of sixteen orders of magnitude of energy scales between what is presently accessible ($\sim 1$Tev) and the presumed Planck scale ($\sim 10^{16}$Tev), is almost certainly false. The Planck scale is much closer than it appears to be.
+[Note added Nov 13, 2018] I should also mention that the idea that the effective Planck energy might be much lower than the naive value of$\sim 10^{16}
+$$
+
+ TeV, is not new and has been explored previously by Calmet, Hsu and Reeb in 2008 ^[1](#fn-609-1)^ and by Reeb in 2011 ^[2](#fn-609-2)^.
+
+------------------------------------------------------------------------
+
+1.  [Quantum gravity at a TeV and the renormalization of Newton's constant, arXiv:0803.1836 ]{#fn-609-1}
+2.  [Running of Newton's Constant and Quantum Gravitational Effects, arXiv:0901.2963 ]{#fn-609-2}

@@ -1,0 +1,47 @@
+---
+title: "About Me"
+date: "2017-08-23"
+slug: "about"
+---
+===========
+
+### About Me
+
+I *was* a physicist employed as an assistant professor at the [National Institute of Technology, Karnataka](http://nitk.ac.in) located in [Mangalore](https://goo.gl/maps/h5vnzXi4EVB2), India from Jul 2013 through Jul 2023. My interests are at the interface of quantum gravity and condensed matter physics. A list of my research papers can be found on [SPIRES](http://inspirehep.net/search?p=exactauthor%3AD.Vaid.1).
+
+### Education
+
+2012, PhD, Pennsylvania State University 2003, BS, Missouri S&T
+
+### Research Interests
+
+Quantum Gravity, General Relativity, Quantum Computation More details about my research projects and interests can be found [here](http://www.quantumofgravity.com/blog/?page_id=639&preview=true).
+
+### Skills
+
+LaTeX, Julia, Python, Wordpress, Sage (Open Source Mathematics)
+
+### Work Experience:
+
+### Assistant Professor, Physics
+
+##### 2013 - 2023
+
+I served as an assistant professor in the department of physics at the National Institute of Technology Karnataka (NITK), located in the southern Indian state of Karnataka.
+
+### Graduate Teaching Assistant
+
+##### 2003 - 2007
+
+Teaching assistant for introductory physics laboratory courses at the Pennsylvania State University
+
+### Research Assistant
+
+##### 2000 - 2003
+
+Research assistant under Prof Don Madison at the Missouri University of Science and Technology (Missouri S&T) located in Rolla, Missouri, USA
+
+### Contact
+
+- [quantumofgravity.com](http://www.quantumofgravity.com/blog)
+- <dvaid79@gmail.com>

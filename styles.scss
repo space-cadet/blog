@@ -1,0 +1,151 @@
+/*-- scss:defaults --*/
+/* Custom SCSS for quantumofgravity */
+
+/* Professional Typography */
+$font-family-serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, serif;
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+$body-bg: #ffffff;
+$body-color: #222;
+$link-color: #0066cc;
+
+/*-- scss:rules --*/
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+/* Header/Navbar Styling */
+.navbar {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 1rem 0;
+  background-color: #fcfcfc;
+  
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-family: $font-family-sans-serif;
+  }
+}
+
+/* Post Styling */
+.quarto-title-block .quarto-title-banner {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.quarto-title .title {
+  font-family: $font-family-sans-serif;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* Content Area */
+#quarto-content {
+  margin-top: 2rem;
+}
+
+body.fullcontent .quarto-title-block.default,
+body.fullcontent #quarto-document-content {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+body.fullcontent .quarto-title-block.default {
+  margin-bottom: 2.5rem;
+}
+
+body.fullcontent #quarto-document-content {
+  font-size: 1.14rem;
+  line-height: 1.8;
+  padding-bottom: 3rem;
+}
+
+body.fullcontent #quarto-document-content p,
+body.fullcontent #quarto-document-content li {
+  line-height: 1.8;
+}
+
+body.fullcontent #quarto-document-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+body.fullcontent #quarto-document-content p,
+body.fullcontent #quarto-document-content ul,
+body.fullcontent #quarto-document-content ol,
+body.fullcontent #quarto-document-content blockquote {
+  margin-bottom: 1.35rem;
+}
+
+body.fullcontent #quarto-document-content h2,
+body.fullcontent #quarto-document-content h3,
+body.fullcontent #quarto-document-content h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #3a3a3a;
+  color: #555;
+  font-style: italic;
+  padding: 1rem 2rem;
+  background: #fdfdfd;
+  margin: 2rem 0;
+}
+
+/* Math Styling */
+.math {
+  color: #222;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-bottom: 1px solid currentColor;
+    color: $link-color;
+  }
+}
+
+/* Footer */
+footer {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  background: #fcfcfc;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Images & Captions */
+figure, .quarto-figure {
+  margin: 2rem 0;
+  text-align: center;
+  
+  img {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  figcaption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+  }
+}

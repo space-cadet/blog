@@ -1,0 +1,19 @@
+---
+title: "Speeding up Wordpress"
+date: "2017-08-05"
+categories: []
+slug: "speeding-up-wordpress"
+---
+One common problem with wordpress sites is that they can seem sluggish compared to, lets say, sites built with static or single-file CMSs such as [grav.](https://getgrav.org/) There are several online tools which can help you check how fast your site is and how to optimize its performance. Two of these are [pingdom](https://tools.pingdom.com/) and Google's [pagespeed insights](https://developers.google.com/speed/pagespeed/insights/). Putting my site through these two tools yields the following results:
+
+<figure>
+<img src="https://physicistatwork.com/wpblog/wp-content/uploads/2017/08/FireShot-Capture-2-Website-speed-__-https___tools.pingdom.com__cqRNR4-69x300.jpg" https:="" data-physicistatwork.com="" data-wpblog="" data-wp-content="" data-uploads="" data-2017="" data-08="" data-fireshot-capture-2-website-speed-__-https___tools.pingdom.com__cqrnr4.jpg"="" alt="&lt;a href=" /> Result from tools.pingdom.com" /&gt;
+<figcaption><a href="https://physicistatwork.com/wpblog/wp-content/uploads/2017/08/FireShot-Capture-2-Website-speed-__-https___tools.pingdom.com__cqRNR4.jpg"></a> Result from tools.pingdom.com</figcaption>
+</figure>
+
+<figure>
+<img src="https://physicistatwork.com/wpblog/wp-content/uploads/2017/08/FireShot-Capture-1-PageSpeed-Insights_-https___developers.google.com_speed_pagespeed_insights_-207x300.jpg" https:="" data-physicistatwork.com="" data-wpblog="" data-wp-content="" data-uploads="" data-2017="" data-08="" data-fireshot-capture-1-pagespeed-insights_-https___developers.google.com_speed_pagespeed_insights_.jpg"="" alt="&lt;a href=" /> Results from Google Pagespeed Insights." /&gt;
+<figcaption><a href="https://physicistatwork.com/wpblog/wp-content/uploads/2017/08/FireShot-Capture-1-PageSpeed-Insights_-https___developers.google.com_speed_pagespeed_insights_.jpg"></a> Results from Google Pagespeed Insights.</figcaption>
+</figure>
+
+A more comprehensive list of online tools for testing your wordpress site speed can be found [here](https://premium.wpmudev.org/blog/free-speed-testing-tools/). Nb: The fullscreen browser images were captured using the very useful Firefox plugin [Fireshot](https://addons.mozilla.org/en-US/firefox/addon/fireshot/).

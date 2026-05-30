@@ -1,0 +1,56 @@
+---
+title: "Quotes and Anecdotes"
+date: "2018-12-15"
+slug: "quotes-and-anecdotes"
+---
+# Jun 14, 2021
+
+> > > You have to learn to think about the simplest possible thing in the simplest possible best way, and then things proceed. General fact about life in Physics
+
+Nima Arkani-Hamed [talking](https://www.youtube.com/watch?v=d5Gjj-9J45I) about the importance of understanding three-point gluon scattering amplitudes in order to understand higher order amplitudes.
+
+# Jun 30, 2019
+
+> As an undergraduate at Hampshire College, I did a lot of physics and some philosophy courses. Then when I went to Harvard for graduate school, I intended to do a double Ph.D. in physics and philosophy, but I got disenchanted with philosophy pretty quickly. I mean, **the physicists were arrogant enough. But the philosophers even more so.**
+
+Lee Smolin in an [interview](www.quantamagazine.org/were-stuck-inside-the-universe-lee-smolin-has-an-idea-for-how-to-study-it-anyway-20190627/) with quanta magazine, explaining the sociology of physicists and philosophers.
+
+------------------------------------------------------------------------
+
+# Mar 11, 2019
+
+> It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, **so that his place shall never be with those cold and timid souls who neither know victory nor defeat.**
+
+Teddy Roosevelt in the [speech](http://www.theodore-roosevelt.com/trsorbonnespeech.html) "Citizenship In A Republic", delivered at the Sorbonne, in Paris, France on 23 April, 1910.
+
+# Dec 31, 2018
+
+Gerard 't Hooft's opinion [@t-Hooft2017Natures] of causal sets, loop quantum gravity and causal dynamical triangulations as plausible approaches towards a theory of quantum gravity:
+
+> Numerous other schemes have been proposed, over time. As is often the case in situations such as these, **there [has] been an abundance of completely wild concoctions that serious researchers have come up with. Lack of phantasy is not our problem [9][10][11].**
+
+where the references "[9][10][11]" are to the works [@Sorkin2003Causal; @Rovelli1998Loop; @Smolin2017Three; @Ambjorn2014Quantum].
+
+------------------------------------------------------------------------
+
+Warren Siegel in his text [@Siegel2001Introduction], commenting on the high energy levels required in order to be able to study String Theory:
+
+> Chapts. 2-5 can be considered almost as an independent book, an attempt at a general approach to all of field theory. **For those few high energy physicists who are not intensely interested in strings (or do not have high enough energy to study them)**, it can be read as a new introduction to ordinary field theory, although familiarity with quantum field theory as it is usually taught is assumed.
+
+------------------------------------------------------------------------
+
+# Dec 30, 2018
+
+Joe Polchinski [@Polchinski1998String] on the significance of String Theory in the preface of Vol 1 of his magnum opus "*String Theory*":
+
+> **String theory (and the entire base of physics upon which it has been built) is one of mankind's great achievements**, and it has been my privilege to try to capture its current state.
+
+------------------------------------------------------------------------
+
+# Dec 15, 2018
+
+[Peter Goddard](https://arxiv.org/abs/0802.3249v1){target="_blank" rel="noopener noreferrer"} [@Goddard2008From] on the use of "modern" mathematics in theoretical high energy physics in the early days of string theory:
+
+> A senior and warmly admired physicist gave some lectures on the Regge theory of high energy processes. With great technical mastery, he was covering the board with special functions, doing manipulations that I knew from my studies with Alan White (who was also at the School) could be handled efficiently and elegantly using harmonic analysis on noncompact groups. Just as I was wondering whether it might be too impertinent to make a remark to this effect, the lecturer turned to the audience and said, "***They tell me that you can do this all more easily if you use group theory, but I tell you that, if you are strong, you do not need group theory.***"
+
+------------------------------------------------------------------------

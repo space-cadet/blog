@@ -1,0 +1,43 @@
+---
+title: "Spacetime Geometry as Information Geometry"
+date: "2015-08-16"
+categories: []
+slug: "spacetime-geometry-as-information-geometry"
+---
+In [an entry](http://fqxi.org/community/forum/topic/1811) to the 2013 FQXi essay contest and in an accompanying [paper](http://arxiv.org/abs/1305.3621v1), Jonathan Heckman, a postdoc at Harvard, put forward a scintillating new idea - that one can derive the theory of strings and of gravity starting from nothing more but a Bayesian statistical inference model in which a *collective* of $N$agents (representing by points on a$d$-dimensional grid) sample a probability distribution in order to obtain the best fits to a set of parameters $\\{y_1,\ldots,y_M\\}$. In investigating the statistical mechanics of such a collective, he finds that their dynamics can be described by an *effective field theory*, which happens to be the non-linear sigma model. Further requiring that the "judgements" of the collective be stable under perturbations implies that the dimension $d$ of the manifold in which the agents are embedded must be equal to two. Furthermore, he notes that conformal invariance of the resulting two dimensional "agent space", leads us to Einstein's theory of gravity and that the effective dynamics of the collective is described by a theory of strings.
+
+At first glance his line of reasoning appears to be impeccable, and it is only the profound nature of his conclusions that might lead one to question whether his approach has any fatal flaws. Disregarding that possibility for the time being, let us proceed towards further interpreting this ground-breaking result.
+
+The collective lives on a two-dimensional manifold which one can naturally identify with the worldsheet swept out by a string moving in an $M$-dimensional spacetime. Moreover, the space of parameters to which the collective performs a fit must also naturally be identified with the background geometry the string is embedded in. This leads to ask, whether it makes sense to identify the points of a spacetime geometry with statistical parameters and, if so, how can one then relate our usual geometrical notions of distance, angles, etc. to information based concepts.
+
+# Cosmological Rulers
+
+To begin, let us switch to a simpler setting - that of our usual flat Minkowski $3+1$ dimensional spacetime, within which are embedded at random locations a set of agents which resemble the wireless routers commonly used in homes and offices. Each agent transmits a single tone at fixed time intervals indicating its presence to all the other agents in its vicinity. Each agent also *listens* for the tone broadcast by other agents, and by accumulating many such events performs an estimate of its distance to each of the other agents. **(illustration)** These agents have no scales and no way to measure distances and areas. How can a distance scale arise solely from exchanging signals between agents?
+
+First, let us consider the situation when we *do* have a way to measure distances. Each agent transmits a signal, say in the form of an em wave, which propagates outwards isotropically from the location of the agent. Now, conservation of energy implies that the total flux $\Phi$through any closed surface enclosing the agent should stay the same **(illustration)**. In particular given two spherical surfaces$S_1$and$S_2$of radii$r_1$and$r_2$(with$r_2 > r_1$), the flux per unit area $I$:
+
+$I(r) = \frac{\Phi}{4\pi r^2}$is smaller the greater the distance from the agent:$I_2 (r_2) < I_1 (r_1)$. So, when an agent $A_1$emits a signal containing$n$-bits, another agent $A_2$situated a distance$r_{12}$from the first one can receive at most:$m = n \frac{a}{4 \pi r_{12}^2}$bits of the original signal. Here$a$is a unit of area, which characterizes the size of the "aperture" using which an agent captures signals. Alternatively, we can state that$\mathcal{A}_2$receives a fraction of the total flux emitted by$\mathcal{A}_1$, given by:
+
+$\Phi' = \Phi \frac{a}{4 \pi r_{12}^2}$Since all agents are identical - emit identical signals and have apertures of the same area -$\mathcal{A}_2$can use the value of the received flux to determine the distance from$\mathcal{A}_1$as:$r_{12} = \sqrt{ \frac{a}{4 \pi} \frac{\Phi}{\Phi'} } = \sqrt{ \frac{\Phi_0}{\Phi_{12}} }$where, for WTLOG (without loss of generality), we have set the area of the aperture$a = 4\pi$. $\Phi_0 = \Phi$ is the flux emitted by .$\mathcal{A}_1$and since we are assuming all agents are identical, this can be set to a universal value$\Phi_0$. Finally, $\Phi_{12} = \Phi'$is the flux received by$\mathcal{A}_2$from$\mathcal{A}_1$Let us note that since, *a priori,* we do not have access to any "rulers" *we can only measure ratios of distances. This, in fact, is exactly what is done in most modern cosmological observations. There is no way to determine* *absolute* distances to stars and galaxies, without reference to some celestial objects which are used as "standard candles". We observe a given standard candle - say a type Ia supernova - in some distant galaxy and determine the amount$z$its light is red-shifted by the time it reaches us. Using some other methods we determine the physical distance that$z$ corresponds to. In this way, we map out the large scale structure of our Universe (or at least of our local neighborhood) by *comparing* the spectra received from various objects with each other.
+
+In this manner, each agent $\mathcal{A}_i$can determine its distance to any other agent$\mathcal{A}_j$as:$r_{ij} = \sqrt{ \frac{\Phi_0}{\Phi_{ij}} }$And since, we are in a flat background without any dissipation it is safe to assume that$\Phi_{ij} = \Phi_{ji}$and therefore$r_{ij} = r_{ji}$.
+
+There are two other details. First, how does a given agent $\mathcal{A}_i$distinguish between the flux received from two different agents$\mathcal{A}_j$and$\mathcal{A}_k$, which lie at equal distances from $\mathcal{A}_i$? Second, even with the ability to measure distances to other agents, how does any one agent reconstruct the geometry in its neighborhood? Without some sense of *direction*, distances alone are not sufficient to allow an agent to distinguish between two equally distant neighbors.
+
+The first problem can be addressed by equipping each agent with a random number generator. The procedure followed by any agent is then as follows:
+
+1.  When its first turned on, the agent generates a random number, its unique ID, and transmits that embedded with its default signal.
+2.  As it receives signals from other agents, it compares the numbers it reads from their signals with its own. If it receives a signal with a number identical to its own, it generates another random number and sets that as its new ID.
+3.  This process is continued until every ID the agent receives is different from its own, for some minimum specified duration.
+4.  Once this *equilibrium* state is reached, the agent uses the measured value of incoming fluxes to associate a distance to each one of its neighbors.
+5.  In the event of an ID conflict - agent receives flux signal with ID identical to its own - the system resets and starts from step 2.
+
+The second problem, that of being able to distinguish neighbors which are equidistant from a given agent, but not coincident, can be addressed in several ways.  One possible method is
+
+# Area and Information Density
+
+ 
+
+ 
+
+# Conclusion

@@ -1,0 +1,21 @@
+---
+title: "Euler&#039;s Theorem and the Smarr Relation"
+date: "2018-10-19"
+categories: []
+slug: "eulers-theorem-and-the-smarr-relation"
+---
+The area of a charged rotating (Kerr) black hole is given by 
+
+$$\label{eqn:kerr-area-relation}\nA = 4\pi \left[ 2 M^2 + 2 (M^4 - L^2 - M^2 Q^2)^{1/2} - Q^2 \right] \\$This relation can be inverted to express the mass$M$as a function of charge$Q$, area$A$and angular momentum$L$:$\label{eqn:kerr-mass-relation}\nM = \left[ \frac{A}{16\pi} + \frac{4\pi L^2}{A} + \frac{Q^2}{2} + \frac{\pi Q^4}{A} \right]^{1/2} \\$As can be seen this is a homogenous function of the variables$(A,L,Q^2)$of degree$n = 1/2$.
+
+From the first law of black hole thermodynamics<sup id="fnref-570-2"><a href="#fn-570-2" class="jetpack-footnote">1</a></sup>, we know that the change in the mass of the black hole can be written as:$\label{eqn:kerr-first-law}\ndM = T dA + \Omega dL + \Phi dQ \\$where$T, \Omega, \Phi$are the temperature <sup id="fnref-570-3"><a href="#fn-570-3" class="jetpack-footnote">2</a></sup>, angular velocity and electric potential of the black hole respectively.
+
+Now, Euler's homogenous function theorem<sup id="fnref-570-4"><a href="#fn-570-4" class="jetpack-footnote">3</a></sup> tells us that any function homogenous in its variables of degree$n$, satisfies:$\label{eqn:euler-homogenous}\nn f(\vec{x}) = \sum_{i=1}^N x_i \frac{\partial f}{\partial x_i} \\$where$\vec{x} = {x_1,x_2,\ldots,x_N}$. \ref{eqn:euler-homogenous} along with \ref{eqn:kerr-mass-relation}, implies that:
+CODEXMATHTOKEN0END
+where we have used \ref{eqn:kerr-first-law} to determine the differentials of$M$with respect to the other variables. In the third term on the <em>r.h.s</em>, we have used:$\nQ^2 \frac{\partial M}{\partial Q^2} = Q^2 \frac{\partial M}{\partial Q} \frac{\partial Q}{\partial Q^2} = \frac{Q}{2} \frac{\partial M}{\partial Q} \\$This gives us the Smarr formula relating the mass of a charged, rotating black hole to its charge, angular momentum and area:$\label{eqn:smarr-relation}\nM = 2AT + 2L\Omega + Q\Phi \\$$
+
+------------------------------------------------------------------------
+
+1.  [Bardeen, Carter, Hawking; Four laws of black hole thermodynamics; CMP; 1973 ]{#fn-570-2}
+2.  [Or as Smarr calls it, the "effective surface tension" of the black hole horizon. ]{#fn-570-3}
+3.  [Euler's Homogenous Function Theorem ]{#fn-570-4}

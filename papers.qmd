@@ -1,0 +1,58 @@
+---
+title: "Papers"
+date: "2018-11-10"
+slug: "papers"
+---
+Publication List (as of Mar 13, 2023)
+
+1.  **Deepak Vaid**, Sumukha S. Adiga, "Thermal Intertwiners" (under preparation)
+
+2.  **Deepak Vaid**, "Arrow of Time from Spontaneous Symmetry Breaking in Spin Networks" (under preparation)
+
+3.  **Deepak Vaid** and D. Suresh, "*Coherent states and particle scattering in loop quantum gravity,*", Eur. Phys. J. C, vol. 82, no. 8, p. 723, doi: [10.1140/epjc/s10052-022-10701-6](https://dx.doi.org/10.1140/epjc/s10052-022-10701-6); [arXiv:2208.10632](https://arxiv.org/abs/2208.10632), Aug 2022
+
+4.  **Deepak Vaid**, "*Lorentz Invariance, Scattering Amplitudes and the Emergence of Semiclassical Geometry,*", [arXiv:2205.06777](https://dx.doi.org/10.48550/arXiv.2205.06777), May 2022
+
+5.  **Deepak Vaid**, "*Connecting Loop Quantum Gravity and String Theory via Quantum Geometry,*", in XXIII DAE High Energy Physics Symposium, Singapore, 2021, pp. 391-399. doi: [10.1007/978-981-33-4408-2_55](https://dx.doi.org/10.1007/978-981-33-4408-2_55)
+
+6.  K. V. Rajani and **Deepak Vaid**, "*Comparative Study of Bulk and Surface Pressure of Charged AdS Black Hole,*", Springer Proc. Phys., vol. 261, pp. 913-917, 2021, doi: [10.1007/978-981-33-4408-2_130](https://dx.doi.org/10.1007/978-981-33-4408-2_130)
+
+7.  K. V. Rajani, C. L. A. Rizwan, A. N. Kumara, **Deepak Vaid**, and A. K. M, "*Regular Bardeen AdS Black Hole as a Heat Engine,*", Nucl. Phys. B, vol. 960, p. 115166, doi: [10.1016/j.nuclphysb.2020.115166](https://dx.doi.org/10.1016/j.nuclphysb.2020.115166), Nov 2020
+
+8.  C. L. A. Rizwan, A. N. Kumara, K. Hegde, and **Deepak Vaid**, "*Coexistent physics and microstructure of the regular Bardeen black hole in anti-de Sitter spacetime,*", Annals of Physics, vol. 422, 2020, doi: [10.1016/j.aop.2020.168320](https://dx.doi.org/10.1016/j.aop.2020.168320), [arXiv:2008.06472](https://arxiv.org/abs/2008.06472), Aug 2020
+
+9.  K. V. Rajani, C. L. A. Rizwan, A. N. Kumara, **Deepak Vaid**, and M. S. Ali, "*Joule-Thomson Expansion of Regular Bardeen AdS Black Hole Surrounded by Static Anisotropic Quintessence Field*" Phys. Dark Univ., vol. 32, p. 100825, doi: [10.1016/j.dark.2021.100825](https://dx.doi.org/10.1016/j.dark.2021.100825), [arXiv:2002.03634](https://arxiv.org/abs/2002.03634), Feb 2020
+
+10. A. N. Kumara, C. L. A. Rizwan, **Deepak Vaid**, and K. M. Ajith, "*Critical Behaviour and Microscopic Structure of Charged AdS Black Hole with a Global Monopole in Extended and Alternate Phase Spaces,*", [arXiv:1906.11550](https://dx.doi.org/10.48550/arXiv.1906.11550), Jan 2020
+
+11. **Deepak Vaid**, "*Quantum Error Correction in Loop Quantum Gravity,*", [arXiv:1912.11725](https://arxiv.org/abs/1912.11725), Dec 2019
+
+12. C. L. A. Rizwan, A. N. Kumara, K. V. Rajani, **Deepak Vaid**., and K. M. Ajith, "*Effect of Dark Energy in Geometrothermodynamics and Phase Transitions of Regular Bardeen AdS Black Hole,*", Gen. Rel. Grav., vol. 51, no. 12, p. 161, Dec. 2019, doi: [10.1007/s10714-019-2649-4](https://dx.doi.org/10.1007/s10714-019-2649-4), [arXiv:1811.10838](https://arxiv.org/abs/1811.10838), Nov 2018
+
+13. C. L. Ahmed Rizwan, A. Naveena Kumara, **Deepak Vaid,** and K. M. Ajith, "*Joule-Thomson expansion in AdS black hole with a global monopole*", [arXiv:1805.11053](http://arxiv.org/abs/1805.11053), May 2018
+
+14. C. L. A. Rizwan and **Deepak Vaid**, "*Second order phase transition in thermodynamic geometry and holographic superconductivity in low-energy stringy black holes,*", in AIP Conference Proceedings, vol. 1953, no. 1, p. 040026. doi: [10.1063/1.5032646](https://dx.doi.org/10.1063/1.5032646), May 2018
+
+15. **Deepak Vaid**, "*Connecting Loop Quantum Gravity and String Theory via Quantum Geometry,*" Nov. 2017, [arXiv:1711.05693](http://arxiv.org/abs/1711.05693), Nov 2017
+
+16. **Deepak Vaid**, "*Thermal Time and Kepler's Second Law,*", Jul. 2016, [arXiv:1607.00955](http://arxiv.org/abs/1607.00955)
+
+17. **Deepak Vaid** and S. Bilson-Thompson, LQG for the bewildered: The self-dual approach revisited. Springer Nature, 2016. doi: [10.1007/978-3-319-43184-0](https://dx.doi.org/10.1007/978-3-319-43184-0), [arXiv:1402.3586](https://arxiv.org/abs/1402.3586), Feb 2014
+
+18. **Deepak Vaid**, "*Quantum Gravity for Dummies,*", [arXiv:1402.2757](http://arxiv.org/abs/1402.2757), Feb 2014
+
+19. **Deepak Vaid**, "*Superconducting and Antiferromagnetic Phases of Space-Time,*" Advances in High Energy Physics, vol. 2017, doi: [10.1155/2017/7935185](https://dx.doi.org/10.1155/2017/7935185), [arXiv:1312.7119](https://arxiv.org/abs/1312.7119), Dec 2013
+
+20. **Deepak Vaid**, "*Non-abelian Gauge Fields from Defects in Spin-Networks.*", [arXiv:1309.0652](http://arxiv.org/abs/1309.0652), Sep 2013
+
+21. **Deepak Vaid**, "*Elementary Particles as Gates for Universal Quantum Computation,*", [arXiv:1307.0096](http://arxiv.org/abs/1307.0096), Jul 2013
+
+22. **Deepak Vaid**, "*Quantum Hall Effect and Black Hole Entropy in Loop Quantum Gravity,*", [arXiv:1208.3335](http://arxiv.org/abs/1208.3335), Aug 2012
+
+23. **Deepak Vaid**, "*Embedding the Bilson-Thompson model in an LQG-like framework,*", [arXiv:1002.1462](http://arxiv.org/abs/1002.1462), Feb 2010
+
+24. S. Alexander, T. Biswas, A. Notari, and **Deepak Vaid**, "*Local void vs dark energy: confrontation with WMAP and type Ia supernovae,*" Journal of Cosmology and Astroparticle Physics, vol. 2009, no. 09, Sep. 21, 2009. doi: [10.1088/1475-7516/2009/09/025](https://dx.doi.org/10.1088/1475-7516/2009/09/025), [arXiv:0712.0370](https://arxiv.org/abs/0712.0370), Dec 2007
+
+25. S. Alexander and **Deepak Vaid**, "*A fine tuning free resolution of the cosmological constant problem,*" AIP Conference Proceedings, vol. 1140. pp. 24-31, Feb. 2009. doi: [10.1063/1.3183524](https://dx.doi.org/10.1063/1.3183524), [arXiv:hep-th/0702064](https://arxiv.org/abs/hep-th/0702064), Feb 2007
+
+26. S. H. S. Alexander and **Deepak Vaid**, "*Gravity Induced Chiral Condensate Formation and the Cosmological Constant.*", [arXiv:hep-th/0609066](http://arxiv.org/abs/hep-th/0609066), Sep 2006

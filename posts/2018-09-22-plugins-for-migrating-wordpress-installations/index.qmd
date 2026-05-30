@@ -1,0 +1,28 @@
+---
+title: "Plugins for Migrating Wordpress Installations"
+date: "2018-09-22"
+categories: []
+slug: "plugins-for-migrating-wordpress-installations"
+---
+For anybody who manages a wordpress installation, a question that inevitably arises at some point or another is how to migrate their site from one hosting provider to another. Ideally, any such migration tool should have the following capabilities:
+
+1.  Allow backup files of a reasonable size say 512 MB or 1 GB for free
+2.  Allow in-dashboard importing of external backup file, and \...
+3.  Allow filtering of files and directories which are included in the backup archive while exporting a site.
+
+I tried three plugins for this purpose. Following is a log of my experience:
+
+  ------------------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Plugin Name**                                                           **Pros**                                                       **Cons**                                                                                                                                                                                                                                           **Result**
+
+  All-in-One WP Migration                                                   Allows in-dashboard import of backup file.                     No file or directory filtering when creating backup\                                                                                                                                                                                               Because of the file size limit and the lack of file-filtering, for most installations, the backup file will end up being larger than 512 MB, which is the limit for the free version of the plugin.\
+                                                                                                                                           File size limit is 512 MB                                                                                                                                                                                                                          **Rejected**
+
+  [Duplicator](https://wordpress.org/plugins/duplicator/)                   Has file and directory filtering\                              Will only allow in-dashboard backup import in paid version                                                                                                                                                                                         Not having an in-dashboard import capability is a bummer. But still really useful if you don't mind installing from console.\
+                                                                            No apparent size limit for backup export file                                                                                                                                                                                                                                                                     **Useful**
+
+  [Wordpress Importer](https://wordpress.org/plugins/wordpress-importer/)   Simple, fast, creates lightweight export file in xml format\   Is not aware of plugin customizations and custom datatypes. Just backs up all the data into an xml file. While importing into a new location, user has to ensure that the proper plugins are already installed to interpret the data correctly.\   Actually works! You export everything to an xml file. Ensure that you've installed all required plugins in your new site. Import the xml file and select "import linked media" option while doing so. This automatically copies all the media files from the old server to the new.\
+                                                                                                                                                                                                                                                                                                                                                                                              **Accepted**
+  ------------------------------------------------------------------------- -------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In sum, the Wordpress Importer plugin is the simplest and best to use for most cases. Duplicator plugin also has its uses. All-In-One Wordpress Migration doesn't appear to be useful at all, at least for the free version.

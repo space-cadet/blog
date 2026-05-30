@@ -1,0 +1,22 @@
+---
+title: "Collected Notes"
+date: "2023-03-23"
+slug: "collected-notes"
+---
+On this page you can find a repository of my collected class lecture notes, and notes and slides from research talks and also my notes on various physics topics.
+
+# Class Lecture Notes
+
+*Table omitted from the static migration: class-lecture-notes.*
+
+# Presentation Slides and Notes
+
+*Table omitted from the static migration: research-talk-slides.*
+
+# Miscellaneous Notes
+
+*Table omitted from the static migration: miscellaneous-notes.*
+
+# Student Project Reports
+
+*Table omitted from the static migration: msc-project-reports.*

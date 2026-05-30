@@ -1,0 +1,24 @@
+---
+title: "Zotero vs Mendeley"
+date: "2018-12-28"
+categories: []
+slug: "zotero-vs-mendeley"
+---
+There are two nice reference management apps out there with desktop and web versions: Mendeley and Zotero. Zotero is apparently the original open source version from which the developers of Mendeley decided to develop a more commercial version, which was eventually taken over by Elsevier. Mendeley is the more polished, functional and useful software. So I've been using Mendeley for my online reference management needs, with BibDesk as a desktop backup, for about two years now. Earlier I used CiteULike and for a while I experimented with hosting my own copy of I-Librarian. However, Mendeley has much of the features and functionality that these other platforms lack. Of course, Elsevier being the 400 pound bully in the research publishing market, any initiative run by it which involves putting your research or paper collections in its hands is not to be trusted. In addition to managing pdfs and bibtex references, I also need to be able to insert citations in my blog posts. I have been using the wonderful Papercite plugin for that purpose. However, it has difficulty working with large bibtex files. This led to some more searching and I found a ZoteroPress plugin for Wordpress. The apparent utility of the ZoteroPress plugin combined with my general mistrust for the Elsevier run Mendeley, led me to explore the Zotero desktop app. I had tried using it a few years ago but at that point had found it not ready for primetime. This is the result of my experience using both Zotero and Mendeley side by side:
+
+*Table omitted from the static migration: zotero-vs-mendeley.*
+
+To sum, there is no one platform or app as yet which can serve all the requirements of the serious researcher. An ideal platform would possess the following characteristics:
+
+1.  Be open source
+2.  Cross-platform
+3.  With web, mobile ***and*** desktop versions
+4.  Automatically scan online databases and fix article metadata
+5.  Automatically downloads pdfs when available
+6.  Autogeneration of citation keys according to user-specified format strings as in Bibdesk
+7.  Auto-renaming and autofiling of attachments in folder structure as per user-specified format strings
+8.  Have a plugin mechanism
+9.  Allow users option to store library files either in private online storage such as an OwnCloud or NextCloud server or commercial options such as Google Drive, and most importantly:
+10. **Not be owned and operated by Elsevier**
+
+Someday, someone will figure out such a solution. Till then, we soldier on with what we have!

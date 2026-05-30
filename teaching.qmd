@@ -1,0 +1,80 @@
+---
+title: "Teaching Interests and Philosophy"
+date: "2018-11-10"
+slug: "teaching"
+---
+[Note: PDF version is available here: [teaching-interests-philosophy](/wp-content/uploads/2018/11/teaching-interests-philosophy.pdf)]
+
+# Summary
+
+Over the past five and a half years, I have been working as an assistant professor in physics at the National Institute of Technology Karnataka (NITK) in India. While here I have taught introductory level physics courses and graduate level courses in mathematical physics, statistical mechanics, nuclear physics and general relativity. I have played a crucial role in implementing a more student friendly approach in our teaching practices through the introduction of multiple-choice quiz questionnaires for our in-semester quizzes and have designed and implemented, with the assistance of my colleagues, an entirely new syllabus for our introductory physics course which is taught to all incoming first year students. Over the past five years, I have been deeply involved in several significant aspects of improving access to facilities, enhancing quality of education and promoting equity in the grading process. I will give three examples of these:
+
+1.  **introduced multiple choice question (MCQ) format for quiz tests** conducted twice every semester in our introductory physics course. This was intended to ease the challenges faced by incoming students from weak English backgrounds and also to reduce disparity in grading arising from conscious or unconscious biases on the part of instructors.
+
+2.  **designed and implemented a new syllabus for our introductory physics course**. The goal was to enhance the appeal of physics for our freshmen and to move away from an approach which exposed them right away to advanced topics serving only to discourage many from wanting to learn the subject.
+
+3.  **secured continuing access to a library/reading room facility for the masters students** in our department. I was motivated to take on these challenges because I believe in the core of my being in the fundamental tenets (cheezy as they may sound): `all are created equal'' and that`all are endowed with the right to life, liberty and the pursuit of happiness''. Therefore in whatever capacity possible, I feel it is my duty to ensure that the disadvantaged get better opportunities and that barriers to achievement are broken down rather than being built up.
+
+In the following now I outline my approach towards teaching, after which I detail the teaching activities I have engaged in over the course of my career.
+
+# Teaching Philosophy
+
+The best teachers are not those who know how to stand in front of a class and deliver hour long lectures or solve difficult problems on the blackboard. To be a good teacher means to understand your students, to sense their needs and to convey the joy and excitement of learning which you yourself experienced when first learning the subject. Those who have never felt the high of that moment when something first "clicks", when your perspective on some part of existence is forever changed in an instant, cannot in turn be good teachers. For they cannot convey to the student a feeling which is alien to themselves. And it is the experience of this feeling, of the sheer joy of discovery, which makes learning a truly rewarding experience. Allow me first to summarize my core beliefs and approach towards teaching, following which I will provide a lengthier discussion of the evolution of these beliefs:
+
+1.  **To uplift the weakest**: Teaching should be designed to uplift the weakest of students, rather than to strengthen the skills of those who are already capable. In any type of class-based, collective mode of instruction, there will always be a spread in the capabilities of the students. Nothing pleases the heart of a teacher more than to interact with the smartest kids in class, the ones who are most willing, eager and capable of learning. The opinions of the best students are often used as a barometer to measure the effectiveness of a teacher. However, doing so is a disservice of our position as teachers. The smart kids will manage some way or the other. The curriculum and teaching methods should be targeted to the weakest students. It is those who need the greatest help. If we let them fall behind we betray our fundamental duty as teachers.
+2.  **To ensure equitable treatment**: In any modern society, students in any institution come from a diversity of social, economic, linguistic and religious backgrounds. Unfortunately technological limitations do not yet allow us to overcome linguistic barriers. There must be a preferred language for instruction. What can be done, is to ensure that every student is given sufficient and adequate opportunity to improve their skills in the language used for instruction. Further, instructors must also be sensitive to the varying religious beliefs and backgrounds of their students. Humor is an essential ingredient for maintaining students' attention in class. While an instructor cannot submit their freedom of expression to the altar of political correctness, one should be careful not to indulge in jokes that unnecessarily denigrate any community or gender. Knowing how to provoke students to think and question their own beliefs without offending them or making them feel targeted, is an important skill for a good teacher.
+3.  **To encourage the exceptionally talented**: Adhering to the first two points above can have a negative effect on the morale of talented students. While ensuring equity and fairness in education is a worthwhile goal intended for the benefit of the many, such an approach will necessary lead to dissatisfaction and disenchantment with the education system in those who are extremely talented. The peculiar talents of exceptional students cannot be neglected. Their talent must be recognized, encouraged and they must be provided with opportunities to learn at a rate more suited to them.
+4.  **To make learning fun**: "Fun" is often thought of as being inherently contradictory to being a productive worker or to being a good student. This is based on an incorrect assumption about human nature. We are at our most productive when we enjoy the task entrusted to us. This is not to say that the learning process is or can be pure joy. It will necessarily be, in turn, tedious, slow-moving and frustrating. However, at the end of all that tedium and hard work there must lie some promise of excitement and a sense of discovery. It is the teacher's task to generate and to maintain such a hope in students', whether by various means which could include inspirational stories, quotes, videos, hands-on activities, in class demonstrations, class trips to external facilities or inviting external speakers.
+
+I will now provide a glimpse at how my teaching philosophy has evolved over time. I have been involved in teaching in various capacities since the year 2000. That was the year I joined the undergraduate physics program at the University of Missouri at Rolla (UMR)^[1](#fn-642-1)^. As a foreign student, I was perennially in need of money and to supplement the financial assistance provided by my parents I quickly joined evening tutoring sessions organized by the University. I was a freshman, but I benefitted greatly from the fact that I had spent much of my high school years in teaching myself the physics and mathematics which is normally considered part of the American college curriculum. Consequently, by the time I started my undergraduate studies, I was in a position to start helping my peers navigate the difficult terrain of introductory physics and calculus. In 2003, after completing my Bachelor's in physics from UMR/MUST, I joined the physics graduate program at the Pennsylvania State University hoping to do research in the budding field of loop quantum gravity (LQG). There were very few places in the world where one could study LQG at that time and Penn State happened to be on top of that list. Like most other graduate students I was supported by a fellowship which required me to supervise laboratory sessions for undergraduate freshmen taking introductory college physics. Strictly speaking, my job was to instruct the students on how to perform the lab experiments and to grade their lab reports afterwards. In practice I found myself using the first twenty minutes or so of our two hour lab session to provide students with a quick overview of the physics content which they were supposed to have learned during lecture. For whatever reason, the official lectures left most students feeling little better off than if they had not attended the lectures at all. I think much of the blame for this lies in the affliction I call "PowerPoint-itis" which has overtaken much of college teaching in the industrialized world and elsewhere. The net effect was that my lab sessions became mini lecture sessions through which I learned a great deal about how to effectively communicate with students. In my experience while slide shows are useful in certain classroom situations, their is no substitute for a "chalk talk". When a student sees the instructor take the time and effort to work out the equations in front of the class, rather than simply regurgitating a packaged powerpoint or pdf document, they feel a certain kinship with the instructor. I believe this comes from the most basic principle of leadership that we cannot ask others to do something when we ourselves are not prepared to do it. A student seeing an instructor take the time and invest the effort in working through derivations or problems in class feels far more motivated to repeat those steps than by seeing the instructor flip through a series of slides. This is not to say that knowledge can only be conveyed via writing equations on a black-board. I often use animations and videos to illustrate many concepts - for e.g. beat phenomena in waves, length contraction and time dilation in special relativity, non-inertial frames and pseudo-forces in classical mechanics - to great effect. In class demonstrations are also very effective. To demonstrate the effect of a pseudo-force in an accelerating frame of reference, for instance, one can use a piece of chalk placed on top of a smooth surface such as that of a cellphone which is then accelerated briefly and brought to a stop. At the end of this motion we see that the chalk has moved forward, but the surface has moved even further, implying that chalk was moving in a direction opposite to the direction of the applied external force as is expected from a simple analysis of forces and velocities in the lab and moving frames of reference, respectively. I hope that this statement gives some idea of my teaching philosophy. Of course, teaching is a dynamic process and I am always trying to revise my methods and techniques to better address the changing needs of my students.
+
+# Teaching Activities
+
+- Assistant Professor, National Institute of Technology Karnataka (NITK):
+- *Modern Physics*, Introductory Modern Physics Course for B. Tech 1st year students, Aug 2013 -- Present
+- Instructor, Aug 2013 -- Present (Eleven semesters)
+- Course Co-ordinator, Aug 2014 -- May 2015
+- Instructor, *Mathematical Physics*, M.Sc. Physics 1st year, Aug 2013 -- Dec 2013
+- Instructor, *General Relativity*, M.Sc. Physics Elective, Jan 2014 -- May 2014
+- Instructor, *Nuclear Physics*, M.Sc. Physics 2nd year, Aug 2014 -- Dec 2014, Aug 2016 -- Dec 2016
+- Instructor, *Quantum Hall Effect*, as part of *Material Synthesis & Characterization*, Oct 2015
+- Instructor, *Superconductivity*, as part of *Condensed Matter Physics, Part 2*, Oct 2016 -- Nov 2016
+- Teaching Assistant, Pennsylvania State University:
+- Conducted Labs for Introductory Physics Courses, Aug 2003 - Dec 2007 (Seven Semesters + Four Summer Sessions)
+
+# Courses Taught at NITK
+
+During my employment I have taught the courses shown below. Note: **Odd Semester** runs from July - December. **Even Semester** runs from the end of December till May of the following year. Due to the pandemic semester durations and dates over the past few years have fluctuated.
+
+*Table omitted from the static migration: nitk-teaching.*
+
+**Legend:**
+
+::: {#note1}
+\*
+
+PH110 is the 4 credit core 1st year introductory modern physics course for B.Tech students. The incoming class is divided into sections of 60-80 students and each section is managed by a single faculty member.
+
+::: {#note5}
+\*\*
+
+PH111 is the 3 credit core lab course accompanying the theory course PH110. Each section of students is divided into two batches (B1 and B2) and a single 3 credit course corresponds to a single batch. 6 credits implies that I managed two sections.
+
+::: {#note2}
+†
+
+4 credit hour course shared with Prof H. S. Nagaraja;
+
+::: {#note3}
+‡
+
+Taught \`\`Hall Effect'' module as part of PH879 (overall course instructor Prof Partha P. Das);
+
+::: {#note4}
+§
+
+Taught the module on superconductivity as part of PH801 (overall course instructor Prof Kasturi Bangera)
+
+------------------------------------------------------------------------
+
+1.  [now known as the Missouri University of Science and Technology (MUST) ]{#fn-642-1}

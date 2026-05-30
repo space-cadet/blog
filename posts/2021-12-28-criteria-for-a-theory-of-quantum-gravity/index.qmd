@@ -1,0 +1,44 @@
+---
+title: "Criteria for a Theory of Quantum Gravity"
+date: "2021-12-28"
+categories: []
+slug: "criteria-for-a-theory-of-quantum-gravity"
+---
+In an upcoming blog post I will outline a proposal theory of quantum gravity based upon the positive Grassmannian based upon my [work](https://hal.archives-ouvertes.fr/hal-03438842) with my student Devadarshini Suresh. It is always wise to be skeptical whenever anybody claims to have "a theory of quantum gravity" and I certainly do not want anybody to accept the framework described here without a healthy dose of skepticism. Therefore before I go into the details of the framework let me first address the criteria a theory of quantum gravity should satisfy and why this particular theory satisfies those criteria. The details of the model itself will be in an upcoming post. A video introduction to the ideas in the paper can also be found [here](https://youtu.be/evbCmyeAAfE).
+
+# Criteria for a Theory of Quantum Gravity
+
+In my opinion any successful theory of quantum gravity must satisfy the following *primary* criteria:
+
+1.  **Semiclassical limit**: It should provide a description of the quantum description of geometry at the Planck scale. What we view as a smooth classical spacetime must emerge from this quantum description in some suitable "low energy" ^[1](#fn-1548-1 "Read footnote.")^ limit.
+
+2.  **Matter-Geometry Equivalence**: There should be a correspondence between geometric degrees of freedom and matter degrees of freedom. Indeed, the notion that a theory of quantum gravity can be built from "pure" gravity while matter is something which is added "externally" is one of the great misconceptions^[2](#fn-1548-2 "Read footnote.")^ of our times.
+
+3.  **Scattering amplitudes**: The theory should provide a description of the most elementary processes of particle physics, $\ie$ the scattering of elementary particles. This should not be something that is added as an afterthought to the theoretical framework but should be an integral part of the theory.
+
+One might argue that the criteria above are arbitrary, however it is possible to provide strong technical and philosophical justification for all three points listed above.^[3](#fn-1548-predict "Read footnote.")^. I will postpone that debate for a different occasion. There are also several *secondary* (in my classification) criteria that a theory of quantum gravity must satisfy. These are:
+
+1.  **Holography**: The theory must satisfy a bulk-boundary correspondence (also known as "holography") as is exemplified, for instance, by the AdS/CFT conjecture. This correspondence need not be obeyed by every solution of the equations of the theory but should be satisfied by at least some subset of solutions.
+
+2.  **Time Evolution**: It should be possible to describe the time evolution of quantum geometry without needing to introduce any external time variables. Alongwith "space", the concept of "time" should also emerge^[4](#fn-1548-3 "Read footnote.")^ from the dynamics of the theory.
+
+3.  **Geometry and Computation**: It should be possible to map geometric/topological structures in the theory to computational resources such as sets of entangled qubits (or perhaps qudits). As a corollary the interaction and evolution of geometric/topological structures in the theory should possess an interpretation in terms of elementary computational processes.
+
+# Satisfaction of These Criteria by GQG
+
+Now I will explain the manner in which the theory I am proposing here, which I will refer to as Grassmannian Quantum Gravity (GQG), manifestly satisfies the three primary criteria given above and with some work can likely also be shown to satisfy the three secondary criteria.
+
+1.  **Semiclassical Limit**: In GQG the gravitational degrees of freedom are described by coherent states of spin network intertwiners. These coherent states are peaked around semiclassical states of geometry *by construction*, hence the requirement of a semiclassical limit is automatically satisfied.
+
+2.  **Matter-Geometry Equivalence**: Massless particles with given momenta are identified with (coherent superpositions of) edges of spin-networks with the helicity degree of freedom coming from the $U(1)$gauge field freedom available on each edge in the spinorial formulation of the LQG state space. These same edges also encode geometric information about the manifold in which the spin network is embeddd. The area of a surface is determined by the spin labels of those edges which puncture the given surface. In this sense the$\text{matter=geometry}$ correspondence is satisfied at least for the edge degrees of freedom. It is not clear at this stage whether this correspondence can also be extended to the vertex degrees of freedom of spin-network states. These vertices determine the volume of a given region of spacetime. However, *it is not clear what, if any, interpretation in terms of matter degrees of freedom can be given for spin-network vertices* .
+
+3.  **Scattering Amplitudes**: As in the first point, matter degrees of freedom are incorporated into GQG from the very beginning and not as an afterthought. The state of the coherent intertwiner is labelled by points on the positive Grassmannian which corresponds precisely to a specification of the kinematic data for the scattering of (massless) elementary particles. The momenta of these particles are given by the $SU(2)$ spinor variables which label the coherent intertwiner.
+
+Thus, at least to the extent that GQG satisfies the three primary criteria, I claim that it is a theory of quantum gravity or at least provides the basic skeleton on such a theory. There are several issues that require greater investigation. The first is the question of massive particles. The second is arguably the most important - that of the existence of dynamics. I will show in the upcoming blog post how dynamics comes about naturally once we have the kinematic structure of the theory in place.
+
+------------------------------------------------------------------------
+
+1.  [The idea of an energy scale is not so straightforward to define when our spacetime itself is emergent. The only concept of "scale" one can have in such a system is the number $N$of elementary quanta of geometry. It is therefore the limit that$N \rightarrow \infty$ which one would expect to identify with the "low energy" limit. ]{#fn-1548-1}
+2.  [One can consider this a philosophical bias or an axiom whose validity one is always free to question. In this presentation I take this axiom to be valid. ]{#fn-1548-2}
+3.  [Ultimately, however, the justification of any theory lies in its success (or failure) at making experimentally verifiable predictions. ]{#fn-1548-predict}
+4.  [This requirement can be considered as another axiom whose validity I assume in what follows. ]{#fn-1548-3}

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2019-06-05">
+
+<title>This Week-ish in Theoretical Physics – quantumofgravity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f384962f7b91d97641763c29bba4a4a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      bite: ["\\begin{itemize}", 0],
+      eat: ["\\end{itemize}", 0],
+      beq: ["\\begin{equation}", 0],
+      eeq: ["\\end{equation}", 0],
+      rarrow: "\\rightarrow",
+      beqa: ["\\begin{align}", 0],
+      eeqa: ["\\end{align}", 0],
+      barr: ["\\begin{array}", 0],
+      earr: ["\\end{array}", 0],
+      del: "\\partial",
+      de: "\\mathrm{d}",
+      th: "\\mathrm{th}",
+      ie: "\\textit{i.e.}~",
+      eg: "\\textit{e.g.}~",
+      wrt: "\\textit{w.r.t.}~",
+      etc: "\\textit{etc.}~",
+      C: "\\mathbb{C}",
+      R: "\\mathbb{R}",
+      M: "\\mathcal{M}",
+      N: "\\mathcal{N}",
+      bz: "\\mathbf{z}",
+      mb: ["\\mathbf{#1}", 1],
+      mc: ["\\mathcal{#1}", 1],
+      mbb: ["\\mathbb{#1}", 1],
+      mf: ["\\mathfrak{#1}", 1],
+      unit: ["\\mathbf{\\hat{#1}}", 1],
+      id: "\\mathbb{1}",
+      vect: ["\\boldsymbol{#1}", 1],
+      bvec: ["\\boldsymbol{\\vec #1}", 1],
+      expect: ["\\langle #1\\rangle", 1],
+      innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+      expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+      bra: ["\\langle #1 \\vert", 1],
+      ket: ["\\vert #1 \\rangle", 1],
+      supersc: ["^{\\textrm{#1}}", 1],
+      subsc: ["_{\\textrm{#1}}", 1],
+      sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+      norm: ["\\lVert #1 \\rVert", 1],
+      rket: ["\\vert #1 ]", 1],
+      rbra: ["[ #1 \\vert", 1],
+      rinnerp: ["[ #1 \\vert #2 ]", 2],
+      bket: ["\\vert #1 )", 1],
+      bbra: ["( #1 \\vert", 1],
+      binnerp: ["( #1 \\vert #2 )", 2],
+      innerpA: ["\\langle #1 \\vert #2 ]", 2],
+      innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+      onehalf: "\\frac{1}{2}",
+      Tr: "\\mathrm{Tr}",
+      Cyl: "\\mathrm{Cyl}",
+      Riem: "\\mathrm{Riem}"
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantumofgravity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/space-cadet"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/vaidphysics"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">This Week-ish in Theoretical Physics</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 5, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Surely it is hubris on my part to presume to co-opt the title of the venerable online column “This Week’s Finds in Mathematical Physics” <a href="http://math.ucr.edu/home/baez/twf.html">written</a> for nearly seventeen years by the great doyen of mathematical communication - John Baez. However, not finding any other takers for this task I figured ... why not? So here is the first in a hopefully long line of posts on “<em>This Week-ish in Theoretical Physics</em>”.</p>
+<section id="observing-quantum-mechanical-collapse" class="level1">
+<h1>Observing Quantum Mechanical Collapse</h1>
+<p>In <span class="citation" data-cites="Minev2019To-Catch">(<a href="#ref-Minev2019To-Catch" role="doc-biblioref">Minev et al. 2019</a>)</span>, Minev and collaborators have accomplished something quite remarkable: observing - yes, that’s right, observing - the collapse of a quantum mechanical wavefunction into an eigenstate and demonstrating that, contrary to the Copenhagen interpretation - wavefunction collapse is a gradual, continuous (at least on the resolution scales of the experiment), reversible process. It is hard to overstate the significance of this work. It clearly demonstrates that contrary to Bohr and in agreement with Einstein, quantum mechanical collapse is not a magical event which can never be described in physical terms. Instead, they show that wavefunction collapse is a physical <em>process</em>, like any other, and therefore, like any other process, it can be observed, monitored, controlled and even reversed. There is a substantial amount of literature on this model of wavefunction collapse which goes by the name of “quantum trajectories” (see e.g. <span class="citation" data-cites="Brun2002A-Simple">(<a href="#ref-Brun2002A-Simple" role="doc-biblioref">Brun 2002</a>)</span> for an accessible introduction) and is also studied under the title of “quantum state diffusion” <span class="citation" data-cites="Gisin1997Quantum Ian-Percival1998Quantum">(<a href="#ref-Gisin1997Quantum" role="doc-biblioref">Gisin and Percival 1997</a>; <a href="#ref-Ian-Percival1998Quantum" role="doc-biblioref">Ian Percival 1998</a>)</span> Now the million, nay - billion, dollar question is what is the <em>governing dynamics</em> of wavefunction collapse. Phenomenologically this process can be modeled using the framework of open quantum systems and the Lindblad equation <span class="citation" data-cites="Pearle2012Simple">(<a href="#ref-Pearle2012Simple" role="doc-biblioref">Pearle 2012</a>)</span>. However, this description is only at the level of an “effective theory”. Ultimately some deeper physical principles should determine the manner in which collapse happens. It is possible that the answer may lie in the quantum geometric picture of spacetime which arises from LQG (loop quantum gravity). In any case, this work is sure to set off a frenzy of work in models of stochastic collapse related to quantum gravity in some way or another.</p>
+</section>
+<section id="quantum-computation-as-gravity" class="level1">
+<h1>Quantum Computation as Gravity</h1>
+<p>That is the title of a recent, very elegant paper <span class="citation" data-cites="Caputa2019Quantum">(<a href="#ref-Caputa2019Quantum" role="doc-biblioref">Caputa and Magan 2019</a>)</span> by Pawel Caputa and Javier Magan. It didn’t come out this week-ish, but I learnt of it this week-ish, therefore it qualifies! Let me quote the abstract:</p>
+<blockquote class="blockquote">
+<p>We formulate Nielsen’s geometric approach to complexity in the context of two-dimensional conformal field theories, where series of conformal transformations are interpreted as “unitary circuits”. We show that the complexity functional can be written as the Polyakov action of two-dimensional gravity or, equivalently, as the geometric action on the coadjoint orbits of the Virasoro group. This way, we argue that gravity sets the rules for optimal quantum computation in conformal field theories.</p>
+</blockquote>
+<p>This work is about one of the hottest quantum gravity related lines of research which involves notions of complexity, quantum computation and, of-course, gravity.</p>
+<section id="background-optimal-quantum-circuits" class="level2">
+<h2 class="anchored" data-anchor-id="background-optimal-quantum-circuits">Background: Optimal Quantum Circuits</h2>
+<p>It all goes back to a paper <span class="citation" data-cites="Nielsen2005A-Geometric">(<a href="#ref-Nielsen2005A-Geometric" role="doc-biblioref">Nielsen 2005</a>)</span> by Michael Nielsen - of “Nielsen and Chuang” <span class="citation" data-cites="Nielsen2000Quantum">(<a href="#ref-Nielsen2000Quantum" role="doc-biblioref">Nielsen and Chuang 2000</a>)</span> fame - from 2005. In this work Nielsen addressed the question of quantifying the minimum complexity - measured in terms of the number of primitive gates - a quantum computational circuit must have in order to implement a generic unitary operation on an <span class="math inline">\(n\)</span>qubit state. Assuming the qubits in question are spin 1/2 systems, the space of unitary operations on a single qubit is given by the group<span class="math inline">\(SU(2)\)</span>and therefore the space of unitary operations on<span class="math inline">\(n\)</span>such qubits lives in the manifold<span class="math inline">\(\mc{M} = SU(2^n)\)</span><sup><a href="#fn-1067-nqubit-space">1</a></sup>. The question of finding the optimal way to generate an arbitrary element of<span class="math inline">\(\mc{U} \in \mc{M}\)</span>becomes equivalent to finding the shortest path from the identity element<span class="math inline">\(\mbb{1}_n\)</span>(the “origin” of the manifold) to the point<span class="math inline">\(\mc{U}\)</span>. To determine distances between different points of <span class="math inline">\(\mc{M}\)</span>one needs a metric on this manifold. Nielsen showed that one can define a suitable Finsler metric <sup><a href="#fn-1067-Finsler">2</a></sup> which satisfies the desired properties (continuity, positivity, triangle inequality, etc.) on<span class="math inline">\(\mc{M}\)</span>, such that a geodesic connecting any two points <span class="math inline">\(\mc{U}, \mc{U'}\)</span>of<span class="math inline">\(\mc{M}\)</span>can be viewed as the shortest possible “path” one can follow to generate the unitary<span class="math inline">\(\mc{U'}\)</span>starting from the unitary<span class="math inline">\(\mc{U}\)</span>. That this is a remarkable result needs hardly be emphasized.</p>
+</section>
+<section id="complexity-action" class="level2">
+<h2 class="anchored" data-anchor-id="complexity-action">Complexity = Action</h2>
+<p>For one, it immediately suggests a direct link between the geometry encoded in spin-networks to quantum computation and quantum control theory (more on this in an upcoming post). Secondly, it suggests that it should be possible to write down an action principle whose extremization yields an equation of motion whose trajectory yields the optimal path for generating any unitary operator starting from any other unitary operator. Third, these ideas have recently been exploited in work by Susskind and collaborators in order to formulate the so-called “Complexity = Action” conjecture <span class="citation" data-cites="Brown2016Holographic Brown2016bComplexity Brown2017Quantum Brown2017The-Second Susskind2018PiTP Susskind2018Three Susskind2018Why-Do-Things">(<a href="#ref-Brown2016Holographic" role="doc-biblioref">Brown et al. 2016b</a>, <a href="#ref-Brown2016bComplexity" role="doc-biblioref">2016a</a>; <a href="#ref-Brown2017Quantum" role="doc-biblioref">Brown, Susskind, and Zhao 2017</a>; <a href="#ref-Brown2017The-Second" role="doc-biblioref">Brown and Susskind 2017</a>; <a href="#ref-Susskind2018PiTP" role="doc-biblioref">Susskind 2018a</a>, <a href="#ref-Susskind2018Three" role="doc-biblioref">2018c</a>, <a href="#ref-Susskind2018Why-Do-Things" role="doc-biblioref">2018b</a>)</span> according to which the complexity of the holographic dual of a bulk geometry is equal to the action defined over a region of the bulk known as the Wheeler-deWitt patch. The connection between the second and third points is quite clear.</p>
+</section>
+<section id="cft-complexity-2d-gravity" class="level2">
+<h2 class="anchored" data-anchor-id="cft-complexity-2d-gravity">CFT Complexity = 2D Gravity</h2>
+<p>This brief discussion brings us to the Caputa-Magan paper <span class="citation" data-cites="Caputa2019Quantum">(<a href="#ref-Caputa2019Quantum" role="doc-biblioref">Caputa and Magan 2019</a>)</span>. What the duo have shown can be summarized as follows:</p>
+<ol type="1">
+<li>Conformal transformations in 2D CFTs can be viewed as being composed of a series of gates which belong to the Virasoro group.</li>
+<li>The corresponding action for the Nielsen complexity of a conformal transformation can be expressed entirely in terms of the central charge <span class="math inline">\(c\)</span> of the CFT.</li>
+<li>For large <span class="math inline">\(c\)</span>, the Nielsen complexity becomes identical to the Polyakov action for two-dimensional gravity.</li>
+</ol>
+<p>This represents a concrete realization of the hope expressed in the last section that there should exist an action whose extremization yields the Nielsen complexity. This paper is a very concrete link for the correspondence, as advocated by Susskind: <span class="math inline">\(GR = QM\)</span>. That’s it for this first episode of “This Week-ish in Theoretical Physics”. Ciao!</p>
+<hr>
+<ol type="1">
+<li><span id="fn-1067-nqubit-space">If the Hilbert space of a single system is <span class="math inline">\(d\)</span>dimensional, then the Hilbert space of<span class="math inline">\(n\)</span>such systems is<span class="math inline">\(d^n\)</span>dimensional. Thus, a vector in the<span class="math inline">\(n\)</span>spin 1/2 qubit state space will be of length<span class="math inline">\(2^n\)</span>and operators acting on these states will be represented by<span class="math inline">\(2^n \times 2^n\)</span>dimensional matrices. A unitary operator acting on such<span class="math inline">\(n\)</span>qubit states would therefore be an element of<span class="math inline">\(SU(2^n)\)</span>.&nbsp;</span></li>
+<li><span id="fn-1067-Finsler">A Finsler geometry is a generalization of Riemannian geometry where the restriction that the metric should be a quadratic form, on the tangent space of the manifold, is dropped.&nbsp;</span></li>
+</ol>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Brown2016bComplexity" class="csl-entry" role="listitem">
+Brown, Adam R., Daniel A. Roberts, Leonard Susskind, Brian Swingle, and Ying Zhao. 2016a. <span>“Complexity, Action, and Black Holes.”</span> <em>Physical Review D</em> 93 (8). <a href="https://doi.org/10.1103/PhysRevD.93.086006">https://doi.org/10.1103/PhysRevD.93.086006</a>.
+</div>
+<div id="ref-Brown2016Holographic" class="csl-entry" role="listitem">
+———. 2016b. <span>“Holographic <span>Complexity Equals Bulk Action</span>?”</span> <em>Physical Review Letters</em> 116 (19): 191301+. <a href="https://doi.org/10.1103/PhysRevLett.116.191301">https://doi.org/10.1103/PhysRevLett.116.191301</a>.
+</div>
+<div id="ref-Brown2017The-Second" class="csl-entry" role="listitem">
+Brown, Adam R., and Leonard Susskind. 2017. <span>“The <span>Second Law</span> of <span>Quantum Complexity</span>.”</span> <em>Physical Review D</em> 97 (8): 086015. <a href="https://doi.org/10.1103/PhysRevD.97.086015">https://doi.org/10.1103/PhysRevD.97.086015</a>.
+</div>
+<div id="ref-Brown2017Quantum" class="csl-entry" role="listitem">
+Brown, Adam R., Leonard Susskind, and Ying Zhao. 2017. <span>“Quantum <span>Complexity</span> and <span>Negative Curvature</span>.”</span> <em>Physical Review D</em> 95 (4): 045010. <a href="https://doi.org/10.1103/PhysRevD.95.045010">https://doi.org/10.1103/PhysRevD.95.045010</a>.
+</div>
+<div id="ref-Brun2002A-Simple" class="csl-entry" role="listitem">
+Brun, Todd A. 2002. <span>“A Simple Model of Quantum Trajectories.”</span> <em>American Journal of Physics</em> 70 (7): 719–37. <a href="https://doi.org/10.1119/1.1475328">https://doi.org/10.1119/1.1475328</a>.
+</div>
+<div id="ref-Caputa2019Quantum" class="csl-entry" role="listitem">
+Caputa, Pawel, and Javier M. Magan. 2019. <span>“Quantum <span>Computation</span> as <span>Gravity</span>.”</span> <em>Physical Review Letters</em> 122 (23): 231302. <a href="https://doi.org/10.1103/PhysRevLett.122.231302">https://doi.org/10.1103/PhysRevLett.122.231302</a>.
+</div>
+<div id="ref-Gisin1997Quantum" class="csl-entry" role="listitem">
+Gisin, Nicolas, and Ian C Percival. 1997. <span>“Quantum <span>State Diffusion</span>: From <span>Foundations</span> to <span>Applications</span>,”</span> January. <a href="https://arxiv.org/abs/quant-ph/9701024">https://arxiv.org/abs/quant-ph/9701024</a>.
+</div>
+<div id="ref-Ian-Percival1998Quantum" class="csl-entry" role="listitem">
+Ian Percival. 1998. <em>Quantum State Diffusion</em>. Cambridge University Press.
+</div>
+<div id="ref-Minev2019To-Catch" class="csl-entry" role="listitem">
+Minev, Z. K., S. O. Mundhada, S. Shankar, P. Reinhold, R. Gutierrez-Jauregui, R. J. Schoelkopf, M. Mirrahimi, H. J. Carmichael, and M. H. Devoret. 2019. <span>“To Catch and Reverse a Quantum Jump Mid-Flight.”</span> <em>Nature</em> 570 (7760): 200–204. <a href="https://doi.org/10.1038/s41586-019-1287-z">https://doi.org/10.1038/s41586-019-1287-z</a>.
+</div>
+<div id="ref-Nielsen2005A-Geometric" class="csl-entry" role="listitem">
+Nielsen, Michael A. 2005. <span>“A Geometric Approach to Quantum Circuit Lower Bounds.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.quant-ph/0502070">https://doi.org/10.48550/arXiv.quant-ph/0502070</a>.
+</div>
+<div id="ref-Nielsen2000Quantum" class="csl-entry" role="listitem">
+Nielsen, Michael A., and Isaac L. Chuang. 2000. <em>Quantum <span>Computation</span> and <span>Quantum Information</span></em>. 1st ed. Cambridge University Press.
+</div>
+<div id="ref-Pearle2012Simple" class="csl-entry" role="listitem">
+Pearle, Philip. 2012. <span>“Simple Derivation of the <span>Lindblad</span> Equation.”</span> <em>European Journal of Physics</em> 33 (4): 805–22. <a href="https://doi.org/10.1088/0143-0807/33/4/805">https://doi.org/10.1088/0143-0807/33/4/805</a>.
+</div>
+<div id="ref-Susskind2018PiTP" class="csl-entry" role="listitem">
+Susskind, Leonard. 2018a. <span>“<span>PiTP Lectures</span> on <span>Complexity</span> and <span>Black Holes</span>.”</span> <a href="https://arxiv.org/abs/1808.09941">https://arxiv.org/abs/1808.09941</a>.
+</div>
+<div id="ref-Susskind2018Why-Do-Things" class="csl-entry" role="listitem">
+———. 2018b. <span>“Why Do <span>Things Fall</span>?”</span> <em>arXiv:1802.01198 [Hep-Th]</em>, April. <a href="https://arxiv.org/abs/1802.01198">https://arxiv.org/abs/1802.01198</a>.
+</div>
+<div id="ref-Susskind2018Three" class="csl-entry" role="listitem">
+———. 2018c. <span>“Three <span>Lectures</span> on <span>Complexity</span> and <span>Black Holes</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.1810.11563">https://doi.org/10.48550/arXiv.1810.11563</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantumofgravity\.com\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

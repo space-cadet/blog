@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2018-12-28">
+
+<title>DAE-HEP 2018 - Preons, Fermions and All That – quantumofgravity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f384962f7b91d97641763c29bba4a4a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+window.MathJax = {
+  tex: {
+    macros: {
+      bite: ["\\begin{itemize}", 0],
+      eat: ["\\end{itemize}", 0],
+      beq: ["\\begin{equation}", 0],
+      eeq: ["\\end{equation}", 0],
+      rarrow: "\\rightarrow",
+      beqa: ["\\begin{align}", 0],
+      eeqa: ["\\end{align}", 0],
+      barr: ["\\begin{array}", 0],
+      earr: ["\\end{array}", 0],
+      del: "\\partial",
+      de: "\\mathrm{d}",
+      th: "\\mathrm{th}",
+      ie: "\\textit{i.e.}~",
+      eg: "\\textit{e.g.}~",
+      wrt: "\\textit{w.r.t.}~",
+      etc: "\\textit{etc.}~",
+      C: "\\mathbb{C}",
+      R: "\\mathbb{R}",
+      M: "\\mathcal{M}",
+      N: "\\mathcal{N}",
+      bz: "\\mathbf{z}",
+      mb: ["\\mathbf{#1}", 1],
+      mc: ["\\mathcal{#1}", 1],
+      mbb: ["\\mathbb{#1}", 1],
+      mf: ["\\mathfrak{#1}", 1],
+      unit: ["\\mathbf{\\hat{#1}}", 1],
+      id: "\\mathbb{1}",
+      vect: ["\\boldsymbol{#1}", 1],
+      bvec: ["\\boldsymbol{\\vec #1}", 1],
+      expect: ["\\langle #1\\rangle", 1],
+      innerp: ["\\langle #1 \\vert #2 \\rangle", 2],
+      expectop: ["\\langle #1 \\vert #2 \\vert #3 \\rangle", 3],
+      bra: ["\\langle #1 \\vert", 1],
+      ket: ["\\vert #1 \\rangle", 1],
+      supersc: ["^{\\textrm{#1}}", 1],
+      subsc: ["_{\\textrm{#1}}", 1],
+      sltwoc: "\\mathfrak{sl}(2,\\mathbb{C})",
+      norm: ["\\lVert #1 \\rVert", 1],
+      rket: ["\\vert #1 ]", 1],
+      rbra: ["[ #1 \\vert", 1],
+      rinnerp: ["[ #1 \\vert #2 ]", 2],
+      bket: ["\\vert #1 )", 1],
+      bbra: ["( #1 \\vert", 1],
+      binnerp: ["( #1 \\vert #2 )", 2],
+      innerpA: ["\\langle #1 \\vert #2 ]", 2],
+      innerpB: ["[ #1 \\vert #2 \\rangle", 2],
+      onehalf: "\\frac{1}{2}",
+      Tr: "\\mathrm{Tr}",
+      Cyl: "\\mathrm{Cyl}",
+      Riem: "\\mathrm{Riem}"
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">quantumofgravity</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/space-cadet"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/vaidphysics"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">DAE-HEP 2018 - Preons, Fermions and All That</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 28, 2018</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../wp-content/uploads/2018/12/IMG_20181213_174549-e1545135656503-768x378.jpg" class="img-fluid figure-img"></p>
+<figcaption>Spotted Deer at IIT Madras</figcaption>
+</figure>
+</div>
+<p>The 23<sup>th</sup> <a href="http://web.iitm.ac.in/dae2018/" target="_blank" rel="noopener">DAE-BRNS High Energy Physics Symposium</a> was held at IIT Madras from Dec 10 - Dec 14. It was an interesting event. I met lots of very smart people. My abstract based on my paper <span class="citation" data-cites="Vaid2017Connecting">(<a href="#ref-Vaid2017Connecting" role="doc-biblioref">Vaid 2017</a>)</span> had been selected for a talk in the “Formal Theory” parallel session on Dec 11. Interestingly the talk preceding mine was delivered by Suresh Govindarajan (<a href="https://inspirehep.net/search?p=exactauthor%3AS.Govindarajan.1&amp;sf=earliestdate" target="_blank" rel="noopener">INSPIRE</a>) who is a faculty at IITM and a hardcore string theorist. Also in attendance was <a href="https://www.imsc.res.in/~graj/" target="_blank" rel="noopener">Prof G. Rajasekaran,</a>&nbsp;who is an emeritus faculty at the Institute of Mathematical Sciences, Chennai and himself a distinguished high energy physicist. Naturally, following Govindarajan’s highly mathematical talk on the existence of BKM superalgebras - of which, I understood perhaps the first three slides - I felt a little trepidatious, especially since the number of mathematical formulae in his talk was several orders of magnitude greater than in mine! Naveen, a PhD student also from NITK, was kind enough to record my talk on his phone <sup><a href="#fn-778-RecordingTalks">1</a></sup> . The result is viewable on YouTube.</p>
+<p><a href="https://youtu.be/yntixCQPfXw" class="uri">https://youtu.be/yntixCQPfXw</a></p>
+<section id="connecting-string-theory-and-lqg" class="level1">
+<h1>Connecting String Theory and LQG</h1>
+<p>Couple of days later I had a nice conversation with Prof Govindarajan <sup><a href="#fn-778-Disclaimer">2</a></sup> where he conveyed to me that the general feeling among many in the strings community was that loops and strings would ultimately have to come together. He mentioned the following questions as his main concerns:</p>
+<section id="matter-degrees-of-freedom" class="level2">
+<h2 class="anchored" data-anchor-id="matter-degrees-of-freedom"><strong>Matter Degrees of Freedom</strong></h2>
+<p>Where is the matter in LQG? In String Theory matter arises “naturally” from compactification of <span class="math inline">\(n&gt;4\)</span> dimensions. The compactified dimensions behave like scalar and gauge fields in the non-compactified geometry. I mentioned to him that LQG does have candidates for matter in the form of topological degrees of freedom known as “preons” <span class="citation" data-cites="Bilson-Thompson2005A-topological Vaid2010Embedding">(<a href="#ref-Bilson-Thompson2005A-topological" role="doc-biblioref">Bilson-Thompson 2005</a>; <a href="#ref-Vaid2010Embedding" role="doc-biblioref">Vaid 2010</a>)</span>. Of course, much work is still to be done to understand how the entire spectrum of the standard model can arise from these topological defects. I made some early efforts trying to connect quantum computation gates and elementary particles in LQG in <span class="citation" data-cites="Vaid2013Elementary">(<a href="#ref-Vaid2013Elementary" role="doc-biblioref">Vaid 2013a</a>)</span> and to show how non-abelian gauge fields - such as those in the Standard Model - can arise naturally from defects in spin-networks in <span class="citation" data-cites="Vaid2013Non-abelian">(<a href="#ref-Vaid2013Non-abelian" role="doc-biblioref">Vaid 2013b</a>)</span>.</p>
+</section>
+<section id="degenerate-geometry-in-lqg" class="level2">
+<h2 class="anchored" data-anchor-id="degenerate-geometry-in-lqg"><strong>Degenerate geometry in LQG</strong></h2>
+<p>Suresh’s next concern was about the existence of geometries in LQG where the tetrad <span class="math inline">\(e_\mu^I\)</span>(which determines the metric geometry via the relation<span class="math inline">\(g_{\mu\nu} = e_\mu^I e_\nu^J \eta_{IJ}\)</span>) is allowed to be degenerate - <span class="math inline">\(\ie~\text{det}(e_\mu^I) = 0\)</span>. In such cases the resulting metric exists, however its inverse <span class="math inline">\(g^{\mu\nu}\)</span> does not (because matrices with zero determinant do not have well-defined inverses). His concern might have been motivated by Kaul and Sengupta’s recent work on degenerate spacetimes in the connection formulation of gravity. I explained that there is nothing non-physical about having degenerate spacetimes. One can do all the usual physics with scalars, vectors and spinors in such geometries. However, one also has <em>new physics</em> in such regimes which cannot be captured by the metric formulation. In particular with degenerate tetrads one can have geometries with non-zero torsion even without any spinning matter present <span class="citation" data-cites="Kaul2016Degenerate Kaul2016New-solutions">(<a href="#ref-Kaul2016Degenerate" role="doc-biblioref">Kaul and Sengupta 2016a</a>, <a href="#ref-Kaul2016New-solutions" role="doc-biblioref">2016b</a>)</span>.</p>
+</section>
+<section id="background-dependence-of-string-theory" class="level2">
+<h2 class="anchored" data-anchor-id="background-dependence-of-string-theory"><strong>Background dependence of string theory</strong></h2>
+<p>String theory as it is usually defined, is a manifestly background dependent theory. Now, presumably a theory of quantum gravity should be background independent. One should be able to extract physical information such as correlation functions, scattering amplitudes and such without having to worry about the background geometry the given processes take place in. Moreover, since in the strong quantum gravity regime, even the gravitational field will be involved in scattering processes, our quantum gravity theory should be able to handle cases which involve transitions between geometries which cannot be treated as perturbations of a given background. Suresh recognizes this shortcoming of String Theory and mentioned it as such to me. It is in this respect that LQG trumps String Theory. Background independence is manifest and non-negotiable in LQG. We need to be able to incorporate background independence in a meaningful way in the String framework whether it is via String Field Theory or some other approach. LQG can provide pointers on how this might be accomplished.</p>
+</section>
+<section id="extra-dimensions-or-lack-thereof" class="level2">
+<h2 class="anchored" data-anchor-id="extra-dimensions-or-lack-thereof"><strong>Extra dimensions or Lack Thereof</strong></h2>
+<p>Extra dimensions are a given in String Theory. The requirement of conformal invariance of the string worldsheet enforces that the spacetime dimensions much be <span class="math inline">\(D = 26\)</span>for the bosonic string and<span class="math inline">\(D = 10\)</span>for the fermionic (or supersymmetric) string. In order to obtain our familiar four dimensional spacetime, these extra dimensions have to be gotten “rid off” in some way. The most method is <em>compactification</em> <span class="citation" data-cites="Kawai1986Construction Kawai1987Construction">(<a href="#ref-Kawai1986Construction" role="doc-biblioref">Kawai, Lewellen, and Tye 1986</a>; <a href="#ref-Kawai1987Construction" role="doc-biblioref">Kawai, Lewellen, and Henry Tye 1987</a>)</span> , wherein six (in the case of<span class="math inline">\(D = 10\)</span> superstring theory) dimensions are “rolled up” and only four “large” space+time dimensions remain. The compactified dimensions still manifest physically as effective scalar or gauge fields propagating in the background of the four large dimensions. These extra dimensions are also the source of much criticism of String Theory. It turns out that there is a huge (<span class="math inline">\(\sim 10^{500}\)</span> ways in which the extra dimensions can be compactified and which one of these, if any, compactifications can give rise to our Universe with the Standard Model and all its interactions is a notoriously intractable problem. Extra dimensions are not present, and in fact are not needed, in Loop Quantum Gravity. This is considered a net plus for LQG. However the optimism might be short-lived. All those extra dimensions in String Theory, which seem like so much clutter, can actually be used to produce experimentally verifiable predictions about QCD scattering processes! Sakai and Sugimoto <span class="citation" data-cites="Sakai2005Low-Energy">(<a href="#ref-Sakai2005Low-Energy" role="doc-biblioref">Sakai and Sugimoto 2005</a>)</span> first initiated this approach by constructing a holographic dual of large-N QCD. Following this work many authors, including Aalok Misra and his brilliant student Vikas Yadav, whom I had the pleasure of meeting at this conference, have managed to use the Sakai-Sugimoto framework to predict decay widths of glueballs <span class="citation" data-cites="Yadav2018M-theory">(<a href="#ref-Yadav2018M-theory" role="doc-biblioref">Yadav and Misra 2018</a>)</span> (bound states of gluons) which appear to match very nicely with lattice QCD calculations. LQG is yet to deliver on any such quantitive particle physics related predictions, though it does have several predictions on the astrophysical front <span class="citation" data-cites="Rovelli2014Planck Barrau2014Fast Barrau2017Bouncing">(<a href="#ref-Rovelli2014Planck" role="doc-biblioref">Rovelli and Vidotto 2014</a>; <a href="#ref-Barrau2014Fast" role="doc-biblioref">Barrau, Rovelli, and Vidotto 2014</a>; <a href="#ref-Barrau2017Bouncing" role="doc-biblioref">Barrau et al. 2017</a>)</span>, which if confirmed would be a stunning success.</p>
+</section>
+</section>
+<section id="noncommutative-geometry-and-preons" class="level1">
+<h1>Noncommutative Geometry and Preons</h1>
+<p>Another very interesting talk was delivered by <a href="http://theory.tifr.res.in/~gavai/">Prof.&nbsp;Rajiv Gavai</a> from TIFR on work <span class="citation" data-cites="Ghoderao2018Probing">(<a href="#ref-Ghoderao2018Probing" role="doc-biblioref">Ghoderao, Gavai, and Ramadevi 2018</a>)</span> done with Pulkit Ghoderao and P. Ramadevi, on the possible detection of non-commutative effects by measuring the Lamb shift of the hydrogen atom or in accelerator experiments. Two mathematical quantities <span class="math inline">\(A, B\)</span>are said to be “non-commutative” (or “non-commuting” or “do not commute”), when they <em>dont’</em> satisfy the following relation:<span class="math inline">\([A,B] = 0\)</span>where<span class="math inline">\([A,B] = AB - BA\)</span> is referred to as the “commutator”. Experts may skip the following subsection.</p>
+<section id="non-commutativity-for-non-experts" class="level2">
+<h2 class="anchored" data-anchor-id="non-commutativity-for-non-experts">Non-commutativity for Non-Experts</h2>
+<p>A trivial example is any pair of complex numbers <span class="math inline">\(z_1, z_2\)</span>. Using the rules of complex multiplication one can easily see that <span class="math inline">\([z_1, z_2] = 0\)</span>for all<span class="math inline">\(z_1, z_2 \in \mathbb{C}\)</span>. This is also obviously also true for all real numbers which are a subset of the complex numbers. However, this is not true for quaternions and octonions, which along with the real and complex numbers, constitute the only four normed division algebras (see for e.g. <span class="citation" data-cites="Baez2002The-Octonions">(<a href="#ref-Baez2002The-Octonions" role="doc-biblioref">Baez 2001</a>)</span>) possible mathematically. It is also not true, in general, for matrices. One can see this by taking any two <span class="math inline">\(2 \times 2\)</span>matrices with random elements and calculating the commutator. Another example is given by operators in quantum theory. Position<span class="math inline">\(x\)</span>and momentum<span class="math inline">\(p\)</span>are represented by operators<span class="math inline">\(\hat x\)</span>and<span class="math inline">\(\hat p\)</span>, respectively. While the classical variables commute: <span class="math inline">\({ x, p } = 0\)</span><sup><a href="#fn-778-CurlyBraces">3</a></sup>, their operator versions don’t:<span class="math inline">\([ \hat x, \hat p] = i\hbar \ne 0\)</span>. In this sense, the phase space of a quantum mechanical system is an example of a non-commutative geometry. The non-commutativity Ghoderao et al.’s work is concerned with is between different spatial co-ordinates: <span class="math inline">\([x_i, x_j] = i \theta_{ij}\)</span>where<span class="math inline">\(\theta_{ij}\)</span>measures the <em>amount</em> of non-commutativity. Now this is very interesting. For instance, if you consider a particle in a plane, the operation<span class="math inline">\(x y\)</span>correspond to walking one unit in the<span class="math inline">\(y\)</span>direction, followed by one unit in the<span class="math inline">\(x\)</span>direction.<span class="math inline">\(y x\)</span>is defined in the same way. Now, normally we expect that both operations should get us to the same point,<span class="math inline">\(\ie\)</span> <span class="math inline">\(xy = yx\)</span>. However, if we were living on a non-commutative plane then this would no longer be true. In a sense, non-commutativity measures the presence of “non-abelian defects” in geometry. Both String Theory and LQG generically predict non-commutative effects arising from quantum geometry. Thus the existence of such an effect would provide very strong support for both theories and also allow us to differentiate between various models.</p>
+</section>
+<section id="composite-particles-and-non-commutativity" class="level2">
+<h2 class="anchored" data-anchor-id="composite-particles-and-non-commutativity">Composite Particles and Non-commutativity</h2>
+<p>Ghoderao et al’s result can be summarized in one sentence</p>
+<blockquote class="blockquote">
+<p><em>in a non-commutative geometry, quarks can form composite particles such as protons and neutrons, if and only if, they (quarks) have substructure</em>.</p>
+</blockquote>
+<p>Now this is a stunning result which also applies to leptons such as electrons, muons and neutrinos. The reason I found this work particularly exciting is because it provides very strong circumstantial evidence for the <em>preon model</em> of elementary particles developed by my good friend and collaborator Sundance Bilson-Thompson <span class="citation" data-cites="Bilson-Thompson2005A-topological">(<a href="#ref-Bilson-Thompson2005A-topological" role="doc-biblioref">Bilson-Thompson 2005</a>)</span> <sup><a href="#fn-778-NoRole">4</a></sup>. This model predicts precisely such a substructure for the leptons and quarks. It would be very interesting to try to understand the relationship between the Bilson-Thompson model and non-commutative geometry.</p>
+</section>
+</section>
+<section id="fermi-arcs-and-adscft" class="level1">
+<h1>Fermi Arcs and AdS/CFT</h1>
+<p>Finally, there was very interesting work presented by Wadbor Wahlang who is a graduate student working under <a href="http://www.iitg.ac.in/phy/fac_hompage.php?email=sayan.chakrabarti@iitg.ac.in">Sayan Chakrabarti</a> at IIT Guwahati. This work was about understanding the origin of Fermi arcs in Weyl semi-metals <sup><a href="#fn-778-WeylMetals">5</a></sup> from a holographic perspective. As is well understood by now <span class="citation" data-cites="Hartnoll2010Lectures Hartnoll2008Holographic Hartman2010Cooper">(<a href="#ref-Hartnoll2010Lectures" role="doc-biblioref">Hartnoll 2009</a>; <a href="#ref-Hartnoll2008Holographic" role="doc-biblioref">Hartnoll et al. 2008</a>; <a href="#ref-Hartman2010Cooper" role="doc-biblioref">Hartman and Hartnoll 2010</a>)</span> the AdS/CFT correspondence can be used to explore the phase diagram of condensed matter systems. Essentially what Wahlang and Chakrabarti do is to couple free fermion fields to the usual scalar field living in the bulk AdS spacetime and use that to calculate the spectral function of the boundary field theory. In the event that the fermionic fields they use are Weyl fermions, the spectral function exhibits Fermi arcs. I am looking forward to seeing this work on the arXiv.</p>
+<hr>
+<ol type="1">
+<li><span id="fn-778-RecordingTalks">It might seem a bit narcissistic to some to record one’s own conference talks. However, for scientists, talks are the best way to communicate our ideas to our own community and to the general public. They also serve to help us improve our presentation skills. There’s really no downside to recording your own talks, except perhaps the realization that you’re not quite as slim as you’d like to imagine.&nbsp;</span></li>
+<li><span id="fn-778-Disclaimer">This version is only my recollection of my conversation with Prof Govindarajan and has not been endorsed or approved by him. Any errors or omissions are solely mine.&nbsp;</span></li>
+<li><span id="fn-778-CurlyBraces">We are using curly braces <span class="math inline">\({,}\)</span>because in classical mechanics the commutator is given by the Poisson bracket which is written in this way, whereas square braces<span class="math inline">\([,]\)</span> are typically used to represent commutators of quantum mechanical quantities.&nbsp;</span></li>
+<li><span id="fn-778-NoRole">Just to clarify, I met Sundance long after he had discovered the “Bilson-Thompson” mode and I had no role in its discovery. I did try to explain how it could be embedded into LQG in <span class="citation" data-cites="Vaid2010Embedding">(<a href="#ref-Vaid2010Embedding" role="doc-biblioref">Vaid 2010</a>)</span>&nbsp;</span></li>
+<li><span id="fn-778-WeylMetals">See, for <span class="math inline">\(\eg\)</span> <span class="citation" data-cites="Rao2016Weyl">(<a href="#ref-Rao2016Weyl" role="doc-biblioref">Rao 2016</a>)</span> for an introduction to the concept of Weyl fermions, Weyl semi-metals and Fermi arcs.&nbsp;</span></li>
+</ol>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Baez2002The-Octonions" class="csl-entry" role="listitem">
+Baez, John C. 2001. <span>“The <span>Octonions</span>.”</span> <em>Bulletin of the American Mathematical Society</em> 39 (02): 1–56. <a href="https://doi.org/10.1090/S0273-0979-01-00934-X">https://doi.org/10.1090/S0273-0979-01-00934-X</a>.
+</div>
+<div id="ref-Barrau2017Bouncing" class="csl-entry" role="listitem">
+Barrau, Aurélien, Boris Bolliet, Marrit Schutten, and Francesca Vidotto. 2017. <span>“Bouncing Black Holes in Quantum Gravity and the <span>Fermi</span> Gamma-Ray Excess.”</span> <em>Physics Letters, Section B: Nuclear, Elementary Particle and High-Energy Physics</em> 772 (June): 58–62. <a href="https://doi.org/10.1016/j.physletb.2017.05.040">https://doi.org/10.1016/j.physletb.2017.05.040</a>.
+</div>
+<div id="ref-Barrau2014Fast" class="csl-entry" role="listitem">
+Barrau, Aurélien, Carlo Rovelli, and Francesca Vidotto. 2014. <span>“Fast Radio Bursts and White Hole Signals.”</span> <em>Physical Review D - Particles, Fields, Gravitation and Cosmology</em> 90 (12). <a href="https://doi.org/10.1103/PhysRevD.90.127503">https://doi.org/10.1103/PhysRevD.90.127503</a>.
+</div>
+<div id="ref-Bilson-Thompson2005A-topological" class="csl-entry" role="listitem">
+Bilson-Thompson, Sundance O. 2005. <span>“A Topological Model of Composite Preons.”</span> Electronic Citation. <em>arXiv Preprint Hep-Ph/0503213</em>, no. December 2005 (March): 6. <a href="https://arxiv.org/abs/hep-ph/0503213">https://arxiv.org/abs/hep-ph/0503213</a>.
+</div>
+<div id="ref-Ghoderao2018Probing" class="csl-entry" role="listitem">
+Ghoderao, Pulkit S., Rajiv V. Gavai, and P. Ramadevi. 2018. <span>“Probing the Scale of Non-Commutativity of Space,”</span> June. <a href="https://arxiv.org/abs/1806.06015">https://arxiv.org/abs/1806.06015</a>.
+</div>
+<div id="ref-Hartman2010Cooper" class="csl-entry" role="listitem">
+Hartman, Thomas, and Sean A. Hartnoll. 2010. <span>“Cooper Pairing Near Charged Black Holes.”</span> <em>Journal of High Energy Physics</em> 2010 (6). <a href="https://doi.org/10.1007/JHEP06(2010)005">https://doi.org/10.1007/JHEP06(2010)005</a>.
+</div>
+<div id="ref-Hartnoll2010Lectures" class="csl-entry" role="listitem">
+Hartnoll, Sean A. 2009. <span>“Lectures on Holographic Methods for Condensed Matter Physics.”</span> <em>Classical and Quantum Gravity</em> 26 (22): 224002. <a href="https://doi.org/10.1088/0264-9381/26/22/224002">https://doi.org/10.1088/0264-9381/26/22/224002</a>.
+</div>
+<div id="ref-Hartnoll2008Holographic" class="csl-entry" role="listitem">
+Hartnoll, Sean A, Christopher P Herzog, Gary T Horowitz, and Giacomo Pope. 2008. <span>“Holographic <span>Superconductors</span>.”</span> <em>Journal of High Energy Physics</em> 2008 (12): 15. <a href="https://doi.org/10.1088/1126-6708/2008/12/015">https://doi.org/10.1088/1126-6708/2008/12/015</a>.
+</div>
+<div id="ref-Kaul2016Degenerate" class="csl-entry" role="listitem">
+Kaul, Romesh K., and Sandipan Sengupta. 2016a. <span>“Degenerate Spacetimes in First Order Gravity,”</span> February. <a href="https://doi.org/10.1103/PhysRevD.93.084026">https://doi.org/10.1103/PhysRevD.93.084026</a>.
+</div>
+<div id="ref-Kaul2016New-solutions" class="csl-entry" role="listitem">
+———. 2016b. <span>“New Solutions in Pure Gravity with Degenerate Tetrads,”</span> September. <a href="https://doi.org/10.1103/PhysRevD.94.104047">https://doi.org/10.1103/PhysRevD.94.104047</a>.
+</div>
+<div id="ref-Kawai1987Construction" class="csl-entry" role="listitem">
+Kawai, Hikaru, David C. Lewellen, and S. H. Henry Tye. 1987. <span>“Construction of Fermionic String Models in Four Dimensions.”</span> <em>Nuclear Physics, Section B</em> 288 (C): 1–76. <a href="https://doi.org/10.1016/0550-3213(87)90208-2">https://doi.org/10.1016/0550-3213(87)90208-2</a>.
+</div>
+<div id="ref-Kawai1986Construction" class="csl-entry" role="listitem">
+Kawai, Hikaru, David C Lewellen, and S Henry H Tye. 1986. <span>“Construction of <span>Four-Dimensional Fermionic String Models</span>.”</span> <em>Physical Review Letters</em> 57 (October): 1832–35. <a href="https://doi.org/10.1103/PhysRevLett.57.1832">https://doi.org/10.1103/PhysRevLett.57.1832</a>.
+</div>
+<div id="ref-Rao2016Weyl" class="csl-entry" role="listitem">
+Rao, Sumathi. 2016. <span>“Weyl Semi-Metals : A Short Review.”</span> <em>arXiv:1603.02821 [Cond-Mat]</em>, March. <a href="https://arxiv.org/abs/1603.02821">https://arxiv.org/abs/1603.02821</a>.
+</div>
+<div id="ref-Rovelli2014Planck" class="csl-entry" role="listitem">
+Rovelli, Carlo, and Francesca Vidotto. 2014. <span>“Planck Stars,”</span> January. <a href="https://doi.org/10.1142/S0218271814420267">https://doi.org/10.1142/S0218271814420267</a>.
+</div>
+<div id="ref-Sakai2005Low-Energy" class="csl-entry" role="listitem">
+Sakai, Tadakatsu, and Shigeki Sugimoto. 2005. <span>“Low <span>Energy Hadron Physics</span> in <span>Holographic QCD</span>.”</span> <em>Progress of Theoretical Physics</em> 113 (4): 843–82. <a href="https://doi.org/10.1143/PTP.113.843">https://doi.org/10.1143/PTP.113.843</a>.
+</div>
+<div id="ref-Vaid2010Embedding" class="csl-entry" role="listitem">
+Vaid, Deepak. 2010. <span>“Embedding the <span>Bilson-Thompson Model</span> in a <span class="nocase">LQG-like</span> Framework,”</span> February, 1–10. <a href="https://arxiv.org/abs/1002.1462v1">https://arxiv.org/abs/1002.1462v1</a>.
+</div>
+<div id="ref-Vaid2013Elementary" class="csl-entry" role="listitem">
+———. 2013a. <span>“Elementary <span>Particles</span> as <span>Gates</span> for <span>Universal Quantum Computation</span>,”</span> June, 8. <a href="https://arxiv.org/abs/1307.0096">https://arxiv.org/abs/1307.0096</a>.
+</div>
+<div id="ref-Vaid2013Non-abelian" class="csl-entry" role="listitem">
+———. 2013b. <span>“Non-Abelian <span>Gauge Fields</span> from <span>Defects</span> in {}<span>Spin-Networks</span>{}.”</span> <a href="https://arxiv.org/abs/1309.0652">https://arxiv.org/abs/1309.0652</a>.
+</div>
+<div id="ref-Vaid2017Connecting" class="csl-entry" role="listitem">
+———. 2017. <span>“Connecting <span>Loop Quantum Gravity</span> and <span>String Theory</span> via <span>Quantum Geometry</span>,”</span> November. <a href="https://arxiv.org/abs/1711.05693">https://arxiv.org/abs/1711.05693</a>.
+</div>
+<div id="ref-Yadav2018M-theory" class="csl-entry" role="listitem">
+Yadav, Vikas, and Aalok Misra. 2018. <span>“M-Theory Exotic Scalar Glueball Decays to Mesons at Finite Coupling.”</span> <em>Journal of High Energy Physics</em> 2018 (9): 133. <a href="https://doi.org/10.1007/JHEP09(2018)133">https://doi.org/10.1007/JHEP09(2018)133</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/quantumofgravity\.com\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

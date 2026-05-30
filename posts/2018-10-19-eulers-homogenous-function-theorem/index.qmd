@@ -1,0 +1,33 @@
+---
+title: "Euler&#039;s Homogenous Function Theorem"
+date: "2018-10-19"
+categories: []
+slug: "eulers-homogenous-function-theorem"
+---
+# Homogenous Functions
+
+A homogenous function of order $n$satisfies:$\nf(\lambda x_1, \lambda x_2, \ldots, \lambda x_m) =\lambda^n f(x_1, x_2, \ldots, x_m)\n$For e.g.$\nf(x,y) = \sqrt{x} y^2\n$is homogenous of order$n = 3/2$. However:$\nf(x,y) = \sqrt x y^2 + x^2 y^2\n$ is *not* a homogenous function because it is the sum of two terms which transform differently under scaling.
+
+# Euler's Theorem
+
+Let $f(x_1, x_2, \ldots, x_m)$be a homogenous function of order$n$in$m$variables$x_1, x_2, \ldots, x_m$. Then the following is true ^[1](#fn-586-1)^ : $\nn f(x_1, x_2, \ldots, x_m) = x_1 \frac{\partial f}{\partial x_1} + x_2 \frac{\partial f}{\partial x_2} + \ldots + x_m \frac{\partial f}{\partial x_m}\n$
+
+## Proof
+
+It is sufficient to use a function of two variables to prove the theorem as the proof extends trivially to greater numbers of variables. Let: $\nf(\lambda x, \lambda y) = \lambda^n f(x,y)\n$Taking the derivative of both sides w.r.t$\lambda$: \begin{eqnarray}\nn \lambda^{n-1} f(x,y) & = \frac{\partial f}{\partial x'} \frac{\partial x'}{\partial \lambda} + \frac{\partial f}{\partial y'} \frac{\partial y'}{\partial \lambda} \\n& = x \frac{\partial f}{\partial x'} + y \frac{\partial f}{\partial y'}
+\end{eqnarray} where $x' = \lambda x, y' = \lambda y$. Setting $\lambda = 1$in the above we obtain:$\nn f(x,y) = x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y}\n$ q.e.d.
+
+# Extension to arbitrary scaling parameters
+
+If often happens that all dependent variables scale do not scale in the same way. In such cases, the general scaling behavior of a function is given as ^[2](#fn-586-2)^ : $\lambda^n f(x_1, \ldots, x_m) = f(\lambda^{\alpha_1} x_1, \ldots, \lambda^{\alpha_m} x_m)$In such cases, one can repeat the procedure in the previous section (differentiate both sides *w.r.t*,$\lambda$and finally set$\lambda = 1$) to obtain: 
+
+$$\label{eqn:euler-extended}\nn f(x_1, \ldots, x_m) = \alpha_1 x_1 \frac{\partial f}{\partial x_1} + \ldots + \alpha_m x_m \frac{\partial f}{\partial x_m} \\$<h1>Existence of Converse</h1>
+The converse is also <a href="https://quant.stackexchange.com/a/8912">holds true</a>, <em>i.e.</em> if \ref{eqn:euler-extended} is true then$f(x_1,\ldots, x_m)$is a homogenous function of degree$n
+$$
+
+.
+
+------------------------------------------------------------------------
+
+1.  [http://mathworld.wolfram.com/EulersHomogeneousFunctionTheorem.html ]{#fn-586-1}
+2.  [\\\cite[Section 2]{Kastor2009Enthalpy} ]{#fn-586-2}
